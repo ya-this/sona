@@ -1,0 +1,3736 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TRACK ARCHIVE — RUS RAP 18—25</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --paper: #ECE8E0;
+      --sheet: #F3F0EA;
+      --ink: #141414;
+      --muted: #6D6A63;
+      --cobalt: #1F3FB0;
+      --rule: rgba(20, 20, 20, 0.88);
+      --ease: cubic-bezier(0.2, 0.8, 0.2, 1);
+      --H: min(45vh, 31vw);
+      --cy: 39.5%;
+    }
+
+    @media (max-width: 767px) {
+      :root {
+        --H: min(64vw, 37svh);
+        --cy: 41%;
+      }
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html, body {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background-color: var(--paper);
+      color: var(--ink);
+      font-family: "Inter Tight", system-ui, -apple-system, sans-serif;
+      user-select: none;
+      -webkit-user-select: none;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    @media (pointer: fine) {
+      html, body, button, a, input {
+        cursor: none !important;
+      }
+    }
+
+    /* Soft Blurred Background Accent Shades */
+    .bg-accents {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+      overflow: hidden;
+    }
+
+    .bg-accents::before,
+    .bg-accents::after {
+      content: "";
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(95px);
+      opacity: 0.46;
+    }
+
+    .bg-accents::before {
+      width: min(58vw, 740px);
+      height: min(58vw, 740px);
+      top: -12%;
+      left: -8%;
+      background: radial-gradient(
+        circle at 45% 45%,
+        rgba(31, 63, 176, 0.36) 0%,
+        rgba(86, 122, 224, 0.18) 52%,
+        transparent 76%
+      );
+    }
+
+    .bg-accents::after {
+      width: min(62vw, 800px);
+      height: min(62vw, 800px);
+      bottom: -14%;
+      right: -8%;
+      background: radial-gradient(
+        circle at 50% 50%,
+        rgba(204, 92, 54, 0.30) 0%,
+        rgba(220, 158, 72, 0.18) 48%,
+        transparent 76%
+      );
+    }
+
+    .bg-accent-mid {
+      position: absolute;
+      width: min(50vw, 640px);
+      height: min(44vw, 540px);
+      top: 24%;
+      left: 52%;
+      transform: translateX(-50%);
+      border-radius: 50%;
+      filter: blur(110px);
+      opacity: 0.36;
+      background: radial-gradient(
+        circle at 50% 50%,
+        rgba(31, 63, 176, 0.24) 0%,
+        rgba(154, 76, 122, 0.16) 55%,
+        transparent 78%
+      );
+    }
+
+    /* SVG Paper Grain Overlay */
+    .paper-grain {
+      position: fixed;
+      inset: 0;
+      z-index: 40;
+      pointer-events: none;
+      mix-blend-mode: multiply;
+      opacity: 0.6;
+      background-repeat: repeat;
+      background-size: 220px 220px;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 0.45 0 0 0 0 0.42 0 0 0 0 0.38 0 0 0 0.22 0'/%3E%3C/filter%3E%3Crect width='220' height='220' filter='url(%23n)'/%3E%3C/svg%3E");
+    }
+
+    .lbl {
+      font-family: "Inter Tight", system-ui, sans-serif;
+      font-weight: 600;
+      font-size: 10.5px;
+      line-height: 1;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .box {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      height: 24px;
+      padding: 0 10px;
+      border: 1px solid var(--cobalt);
+      border-radius: 2px;
+      background: rgba(243, 240, 234, 0.65);
+      color: var(--cobalt);
+      transition: background 0.25s var(--ease), color 0.25s var(--ease);
+    }
+
+    .box:hover {
+      background: var(--cobalt);
+      color: var(--paper);
+    }
+
+    button {
+      background: none;
+      border: none;
+      color: inherit;
+      font: inherit;
+      outline: none;
+    }
+
+    /* Top Navigation Bar */
+    .topbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 72px;
+      padding: 0 36px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      color: var(--cobalt);
+      z-index: 30;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .brand-line {
+      width: 40px;
+      height: 1px;
+      background: var(--cobalt);
+      opacity: 0.85;
+    }
+
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+    }
+
+    .nav-link {
+      position: relative;
+      padding: 6px 2px;
+      color: var(--cobalt);
+      opacity: 0.88;
+      transition: opacity 0.25s var(--ease);
+    }
+
+    .nav-link:hover {
+      opacity: 1;
+    }
+
+    .autoplay-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      height: 24px;
+      padding: 0 10px;
+      border: 1px solid rgba(31, 63, 176, 0.45);
+      border-radius: 2px;
+      color: var(--cobalt);
+      background: rgba(243, 240, 234, 0.55);
+      transition: background 0.25s var(--ease), color 0.25s var(--ease), border-color 0.25s var(--ease);
+    }
+
+    .autoplay-pill.is-on {
+      background: var(--cobalt);
+      color: var(--paper);
+      border-color: var(--cobalt);
+    }
+
+    .autoplay-dot {
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: currentColor;
+      opacity: 0.7;
+    }
+
+    .autoplay-pill.is-on .autoplay-dot {
+      opacity: 1;
+      box-shadow: 0 0 0 2px rgba(236, 232, 224, 0.35);
+    }
+
+    .burger {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 26px;
+      height: 11px;
+      padding: 0;
+    }
+
+    .burger span {
+      display: block;
+      width: 100%;
+      height: 1.5px;
+      background: var(--cobalt);
+      transition: transform 0.3s var(--ease);
+    }
+
+    /* Giant Vertical Halftone Background Typography */
+    .halftone-col {
+      position: fixed;
+      z-index: 1;
+      writing-mode: vertical-rl;
+      text-orientation: upright;
+      font-family: "Inter Tight", system-ui, sans-serif;
+      font-weight: 700;
+      font-size: min(16vh, 10.5vw);
+      line-height: 0.96;
+      letter-spacing: 0.04em;
+      pointer-events: none;
+      color: transparent;
+      background-image:
+        radial-gradient(circle at 50% 50%, rgba(56, 76, 138, 0.52) 0 36%, transparent 42%),
+        linear-gradient(0deg, rgba(110, 122, 160, 0.24), rgba(110, 122, 160, 0.24));
+      background-size: 3px 3px, 100% 100%;
+      -webkit-background-clip: text;
+      background-clip: text;
+    }
+
+    .ht-left {
+      left: 2.2vw;
+      top: 12vh;
+    }
+
+    .ht-right {
+      right: 2.2vw;
+      top: 8vh;
+    }
+
+    /* Floor Shadow under Curved Shelf */
+    .floor-shadow {
+      position: fixed;
+      left: 50%;
+      top: calc(var(--cy) + var(--H) * 0.47);
+      transform: translateX(-50%);
+      width: min(96vw, calc(var(--H) * 3.6));
+      height: calc(var(--H) * 0.26);
+      background: radial-gradient(50% 50% at 50% 40%, rgba(36, 28, 18, 0.32), rgba(36, 28, 18, 0.11) 55%, transparent 72%);
+      pointer-events: none;
+      z-index: 4;
+    }
+
+    /* 3D Curved Shelf Section */
+    .shelf-wrap {
+      position: fixed;
+      left: 0;
+      right: 0;
+      top: calc(var(--cy) - var(--H) / 2 - 50px);
+      height: calc(var(--H) + 100px);
+      perspective: 1400px;
+      perspective-origin: 50% 50%;
+      z-index: 10;
+      touch-action: pan-y;
+    }
+
+    .stage {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: 0;
+      height: 0;
+      transform-style: preserve-3d;
+    }
+
+    .tape {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 0;
+      height: 0;
+      transform-style: preserve-3d;
+      will-change: transform;
+    }
+
+    .face {
+      position: absolute;
+      top: calc(var(--H) * -0.5);
+      height: var(--H);
+      backface-visibility: hidden;
+      -webkit-backface-visibility: hidden;
+      border-radius: 3px;
+      overflow: hidden;
+    }
+
+    .face::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: #0B0A08;
+      opacity: var(--shade, 0);
+      pointer-events: none;
+      border-radius: inherit;
+      z-index: 5;
+    }
+
+    /* Vintage Cloth/Leather Book Spine */
+    .sp {
+      background-color: var(--cloth, #232834);
+      border-left: 1px solid rgba(255, 248, 232, 0.14);
+      border-right: 1px solid rgba(10, 8, 6, 0.45);
+      box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.28);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      padding: 6% 8% 7%;
+      color: #F2ECE0;
+    }
+
+    /* Raised Spine Bands (Бинты переплёта) */
+    .sp::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      z-index: 2;
+      background:
+        linear-gradient(90deg, rgba(255, 250, 240, 0.16) 0%, transparent 22%, rgba(0, 0, 0, 0.24) 85%, rgba(0, 0, 0, 0.42) 100%),
+        linear-gradient(180deg,
+          transparent 0%,
+          transparent 19.5%,
+          rgba(235, 214, 168, 0.34) 20%,
+          rgba(0, 0, 0, 0.38) 21.5%,
+          transparent 22%,
+          transparent 77.5%,
+          rgba(235, 214, 168, 0.34) 78%,
+          rgba(0, 0, 0, 0.38) 79.5%,
+          transparent 80%
+        );
+    }
+
+    .sp-vol {
+      position: relative;
+      z-index: 3;
+      font-family: "Newsreader", Georgia, serif;
+      font-size: calc(var(--H) * 0.022);
+      letter-spacing: 0.12em;
+      color: rgba(242, 226, 188, 0.85);
+      line-height: 1;
+    }
+
+    .sp-thumb-wrap {
+      position: relative;
+      z-index: 3;
+      width: 78%;
+      aspect-ratio: 1 / 1;
+      border-radius: 1.5px;
+      overflow: hidden;
+      border: 1px solid rgba(235, 214, 168, 0.42);
+      background: rgba(16, 15, 13, 0.45);
+      flex-shrink: 0;
+      margin-top: 4%;
+    }
+
+    .sp-thumb {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      opacity: 0;
+      transition: opacity 0.35s ease;
+    }
+
+    .sp-thumb.loaded {
+      opacity: 1;
+    }
+
+    .sp-title-wrap {
+      position: relative;
+      z-index: 3;
+      flex: 1;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      padding: 8% 0;
+    }
+
+    .sp-title {
+      writing-mode: vertical-rl;
+      text-orientation: mixed;
+      font-family: "Newsreader", Georgia, serif;
+      font-weight: 500;
+      font-size: calc(var(--H) * 0.029);
+      line-height: 1.05;
+      letter-spacing: 0.04em;
+      color: #F4EFE4;
+      max-height: 100%;
+      text-align: center;
+      word-break: break-word;
+    }
+
+    .sp-foot {
+      position: relative;
+      z-index: 3;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+      width: 100%;
+    }
+
+    .sp-artist {
+      font-family: "Inter Tight", sans-serif;
+      font-weight: 600;
+      font-size: calc(var(--H) * 0.017);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(242, 226, 188, 0.8);
+      max-width: 92%;
+      text-align: center;
+      line-height: 1.1;
+    }
+
+    .sp-vhs {
+      font-family: "Inter Tight", sans-serif;
+      font-weight: 600;
+      font-size: calc(var(--H) * 0.016);
+      letter-spacing: 0.12em;
+      padding: 2px 3px;
+      border: 1px solid rgba(235, 214, 168, 0.45);
+      color: rgba(242, 226, 188, 0.88);
+      line-height: 1;
+    }
+
+    /* Vintage Outer Book Cover (.cv) — Centered Plate & Compact Text Directly Below */
+    .cv {
+      background-color: #F4EFE4;
+      border: 1px solid rgba(28, 24, 19, 0.34);
+      border-radius: 3px 5px 5px 3px;
+      box-shadow:
+        0 34px 60px -30px rgba(20, 16, 10, 0.62),
+        inset 12px 0 18px -12px rgba(20, 16, 10, 0.22);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 7% 8%;
+      color: var(--ink);
+    }
+
+    /* Book Spine Crease Groove on Left Edge */
+    .cv::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 5.2%;
+      width: 2px;
+      background: linear-gradient(90deg, rgba(20, 16, 10, 0.24), rgba(255, 255, 255, 0.55));
+      pointer-events: none;
+      z-index: 3;
+    }
+
+    /* Subtle Double Blind-Debossed Book Frame */
+    .cv-inner-border {
+      position: absolute;
+      inset: 3.4% 4% 3.4% 7.4%;
+      border: 1px solid rgba(24, 21, 17, 0.2);
+      outline: 1px solid rgba(24, 21, 17, 0.08);
+      outline-offset: -3px;
+      pointer-events: none;
+      z-index: 2;
+    }
+
+    .cv-head {
+      position: absolute;
+      top: 6.5%;
+      left: 0;
+      right: 0;
+      z-index: 3;
+      width: 100%;
+      padding-left: 3%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      font-family: "Inter Tight", sans-serif;
+      font-weight: 600;
+      font-size: calc(var(--H) * 0.017);
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-align: center;
+    }
+
+    /* Centered Square 1:1 Track Cover Plate */
+    .cv-plate-wrap {
+      position: relative;
+      z-index: 3;
+      width: 70%;
+      aspect-ratio: 1 / 1;
+      margin-left: 3%;
+      border-radius: 2px;
+      overflow: hidden;
+      padding: 4px;
+      border: 1px solid rgba(24, 21, 17, 0.26);
+      background: #FAF7F0;
+      box-shadow: 0 6px 16px -8px rgba(20, 16, 10, 0.35);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .cv-cover-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      border-radius: 1px;
+      opacity: 0;
+      transition: opacity 0.45s var(--ease);
+    }
+
+    .cv-cover-img.loaded {
+      opacity: 1;
+    }
+
+    .cv-fallback-art {
+      position: absolute;
+      inset: 4px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 10px;
+      background: linear-gradient(145deg, #EAE3D5 0%, #DFD6C5 100%);
+      color: var(--cobalt);
+      transition: opacity 0.35s ease;
+    }
+
+    .cv-cover-img.loaded + .cv-fallback-art {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .cv-fallback-code {
+      font-family: "Newsreader", Georgia, serif;
+      font-style: italic;
+      font-size: calc(var(--H) * 0.036);
+      line-height: 1.15;
+    }
+
+    /* Centered Compact Text Directly Below Cover Plate */
+    .cv-below {
+      position: relative;
+      z-index: 3;
+      width: 100%;
+      padding-left: 3%;
+      margin-top: 6%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      gap: 4px;
+    }
+
+    .cv-title {
+      font-family: "Newsreader", Georgia, serif;
+      font-weight: 500;
+      font-size: calc(var(--H) * 0.043);
+      line-height: 1.08;
+      letter-spacing: -0.015em;
+      color: var(--ink);
+      max-width: 90%;
+      word-break: break-word;
+    }
+
+    .cv-artist {
+      font-family: "Inter Tight", sans-serif;
+      font-weight: 600;
+      font-size: calc(var(--H) * 0.018);
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+      color: var(--cobalt);
+      max-width: 88%;
+      line-height: 1.2;
+      margin-top: 2px;
+    }
+
+    .cv-stamp {
+      font-family: "Inter Tight", sans-serif;
+      font-weight: 600;
+      font-size: calc(var(--H) * 0.015);
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      padding: 2px 6px;
+      border: 1px solid rgba(24, 21, 17, 0.3);
+      color: var(--muted);
+      line-height: 1;
+      margin-top: 3px;
+    }
+
+    /* Caption Block Below Shelf */
+    .caption-area {
+      position: fixed;
+      left: 50%;
+      top: calc(var(--cy) + var(--H) * 0.5 + 2.8vh);
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 7px;
+      z-index: 15;
+      text-align: center;
+      pointer-events: none;
+    }
+
+    .mask-line {
+      position: relative;
+      overflow: hidden;
+      width: min(82vw, 660px);
+      display: flex;
+      justify-content: center;
+    }
+
+    .mask-line > span {
+      display: inline-block;
+      will-change: transform;
+    }
+
+    .cap-title-mask {
+      min-height: clamp(30px, 3.6vw, 48px);
+    }
+
+    .cap-title {
+      font-family: "Inter Tight", sans-serif;
+      font-weight: 600;
+      font-size: clamp(24px, 3.1vw, 42px);
+      line-height: 1.08;
+      letter-spacing: -0.02em;
+      color: var(--cobalt);
+    }
+
+    .cap-sub-mask {
+      min-height: 15px;
+    }
+
+    .cap-sub {
+      font-family: "Inter Tight", sans-serif;
+      font-weight: 600;
+      font-size: 9.5px;
+      line-height: 1.2;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--cobalt);
+    }
+
+    .cap-rule {
+      width: 18px;
+      height: 1px;
+      background: var(--cobalt);
+      margin: 1px 0;
+    }
+
+    .cap-meta-mask {
+      min-height: 15px;
+    }
+
+    .cap-meta {
+      font-family: "Inter Tight", sans-serif;
+      font-weight: 500;
+      font-size: 10.5px;
+      line-height: 1.2;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--ink);
+    }
+
+    /* Navigation Arrows */
+    .nav-arrow {
+      position: fixed;
+      top: calc(var(--cy) + var(--H) * 0.5 + 2.8vh + 2px);
+      width: 44px;
+      height: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--cobalt);
+      z-index: 20;
+      transition: transform 0.25s var(--ease), opacity 0.25s var(--ease);
+    }
+
+    .nav-arrow:hover {
+      opacity: 0.72;
+    }
+
+    .nav-arrow.prev {
+      left: calc(50% - min(22vw, 280px) - 22px);
+    }
+
+    .nav-arrow.prev:active {
+      transform: translateX(-3px);
+    }
+
+    .nav-arrow.next {
+      left: calc(50% + min(22vw, 280px) - 22px);
+    }
+
+    .nav-arrow.next:active {
+      transform: translateX(3px);
+    }
+
+    /* Timeline Ruler */
+    .timeline {
+      position: fixed;
+      left: 36px;
+      right: 36px;
+      bottom: 86px;
+      height: 36px;
+      z-index: 20;
+    }
+
+    .tl-line {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 10px;
+      height: 1px;
+      background: var(--cobalt);
+      opacity: 0.75;
+    }
+
+    .tl-ticks {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 10px;
+      height: 26px;
+      pointer-events: none;
+    }
+
+    .tl-tick {
+      position: absolute;
+      top: 0;
+      width: 1px;
+      background: var(--cobalt);
+      transform: translateX(-50%);
+    }
+
+    .tl-tick.major {
+      height: 11px;
+      opacity: 0.78;
+    }
+
+    .tl-tick.minor {
+      height: 6px;
+      opacity: 0.36;
+    }
+
+    .tl-year {
+      position: absolute;
+      top: 15px;
+      font-family: "Inter Tight", sans-serif;
+      font-weight: 500;
+      font-size: 9.5px;
+      line-height: 1;
+      color: var(--cobalt);
+      transform: translateX(-50%);
+      white-space: nowrap;
+    }
+
+    .tl-year.first {
+      transform: translateX(0);
+    }
+
+    .tl-year.last {
+      transform: translateX(-100%);
+    }
+
+    .tl-dot {
+      position: absolute;
+      top: 10px;
+      left: 0%;
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: var(--cobalt);
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+      box-shadow: 0 0 0 3px rgba(236, 232, 224, 0.85);
+    }
+
+    /* Persistent Bottom Audio & Volume Dock */
+    .audio-dock {
+      position: fixed;
+      left: 36px;
+      right: 36px;
+      bottom: 30px;
+      height: 44px;
+      padding: 0 14px;
+      background: rgba(243, 240, 234, 0.92);
+      border: 1px solid rgba(31, 63, 176, 0.36);
+      border-radius: 3px;
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      z-index: 75;
+      box-shadow: 0 10px 28px -16px rgba(20, 16, 10, 0.45);
+    }
+
+    .dock-play-btn {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      border: 1px solid var(--cobalt);
+      background: var(--cobalt);
+      color: var(--paper);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      transition: transform 0.2s var(--ease), background 0.2s var(--ease);
+    }
+
+    .dock-play-btn:hover {
+      transform: scale(1.06);
+    }
+
+    .dock-track-info {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      min-width: 0;
+      max-width: 270px;
+      flex-shrink: 1;
+    }
+
+    .eq-bars {
+      display: inline-flex;
+      align-items: flex-end;
+      gap: 2px;
+      height: 12px;
+      width: 14px;
+      flex-shrink: 0;
+    }
+
+    .eq-bars span {
+      display: block;
+      width: 2.5px;
+      height: 3px;
+      background: var(--cobalt);
+      border-radius: 1px;
+      transition: height 0.2s ease;
+    }
+
+    .audio-dock.is-playing .eq-bars span:nth-child(1) {
+      animation: eqBounce 0.65s ease-in-out infinite alternate;
+    }
+    .audio-dock.is-playing .eq-bars span:nth-child(2) {
+      animation: eqBounce 0.48s 0.15s ease-in-out infinite alternate;
+    }
+    .audio-dock.is-playing .eq-bars span:nth-child(3) {
+      animation: eqBounce 0.58s 0.28s ease-in-out infinite alternate;
+    }
+
+    @keyframes eqBounce {
+      0% { height: 3px; }
+      100% { height: 12px; }
+    }
+
+    .dock-text-col {
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+    }
+
+    .dock-title {
+      font-family: "Inter Tight", sans-serif;
+      font-weight: 600;
+      font-size: 11.5px;
+      color: var(--ink);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      line-height: 1.15;
+    }
+
+    .dock-sub {
+      font-family: "Inter Tight", sans-serif;
+      font-weight: 600;
+      font-size: 9px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--cobalt);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      line-height: 1.15;
+      margin-top: 2px;
+    }
+
+    /* Seekable Progress Bar */
+    .dock-progress-wrap {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      min-width: 80px;
+    }
+
+    .dock-time {
+      font-family: "Inter Tight", sans-serif;
+      font-weight: 600;
+      font-size: 10px;
+      letter-spacing: 0.06em;
+      color: var(--muted);
+      font-variant-numeric: tabular-nums;
+      flex-shrink: 0;
+    }
+
+    .dock-seek {
+      position: relative;
+      flex: 1;
+      height: 18px;
+      display: flex;
+      align-items: center;
+      touch-action: none;
+    }
+
+    .dock-seek-track {
+      position: relative;
+      width: 100%;
+      height: 3px;
+      background: rgba(31, 63, 176, 0.2);
+      border-radius: 2px;
+      overflow: hidden;
+    }
+
+    .dock-seek-fill {
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 0%;
+      background: var(--cobalt);
+      border-radius: 2px;
+    }
+
+    /* Volume Controls */
+    .dock-vol-group {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-shrink: 0;
+      padding-left: 8px;
+      border-left: 1px solid rgba(31, 63, 176, 0.22);
+    }
+
+    .vol-mute-btn {
+      width: 26px;
+      height: 26px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--cobalt);
+      border-radius: 2px;
+      transition: background 0.2s var(--ease);
+    }
+
+    .vol-mute-btn:hover {
+      background: rgba(31, 63, 176, 0.1);
+    }
+
+    .vol-slider-wrap {
+      position: relative;
+      width: 82px;
+      height: 22px;
+      display: flex;
+      align-items: center;
+      touch-action: none;
+    }
+
+    .vol-slider {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 100%;
+      height: 4px;
+      border-radius: 2px;
+      background: linear-gradient(
+        90deg,
+        var(--cobalt) 0%,
+        var(--cobalt) var(--vol-pct, 80%),
+        rgba(31, 63, 176, 0.22) var(--vol-pct, 80%),
+        rgba(31, 63, 176, 0.22) 100%
+      );
+      outline: none;
+      touch-action: none;
+    }
+
+    .vol-slider::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--cobalt);
+      border: 2px solid var(--sheet);
+      box-shadow: 0 1px 4px rgba(20, 16, 10, 0.35);
+    }
+
+    .vol-slider::-moz-range-thumb {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--cobalt);
+      border: 2px solid var(--sheet);
+      box-shadow: 0 1px 4px rgba(20, 16, 10, 0.35);
+    }
+
+    .vol-pct-lbl {
+      font-family: "Inter Tight", sans-serif;
+      font-weight: 600;
+      font-size: 9.5px;
+      letter-spacing: 0.05em;
+      color: var(--cobalt);
+      width: 30px;
+      text-align: right;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .dock-auto-btn {
+      height: 22px;
+      padding: 0 8px;
+      border: 1px solid rgba(31, 63, 176, 0.45);
+      border-radius: 2px;
+      font-family: "Inter Tight", sans-serif;
+      font-weight: 600;
+      font-size: 9px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--cobalt);
+      flex-shrink: 0;
+      transition: background 0.2s var(--ease), color 0.2s var(--ease);
+    }
+
+    .dock-auto-btn.is-on {
+      background: var(--cobalt);
+      color: var(--paper);
+      border-color: var(--cobalt);
+    }
+
+    .unlock-banner {
+      display: none;
+      height: 22px;
+      padding: 0 8px;
+      border-radius: 2px;
+      background: var(--cobalt);
+      color: var(--paper);
+      font-family: "Inter Tight", sans-serif;
+      font-weight: 600;
+      font-size: 9px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      align-items: center;
+      gap: 4px;
+      flex-shrink: 0;
+      animation: pulseBadge 1.5s infinite ease-in-out;
+    }
+
+    .unlock-banner.visible {
+      display: inline-flex;
+    }
+
+    @keyframes pulseBadge {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.72; }
+    }
+
+    /* Footer */
+    .footer {
+      position: fixed;
+      left: 36px;
+      right: 36px;
+      bottom: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: var(--cobalt);
+      z-index: 20;
+      pointer-events: none;
+    }
+
+    .footer > * {
+      pointer-events: auto;
+    }
+
+    /* Custom Cursor */
+    .cursor {
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 58px;
+      height: 58px;
+      margin-left: -29px;
+      margin-top: -29px;
+      pointer-events: none;
+      z-index: 100;
+      display: none;
+      align-items: center;
+      justify-content: center;
+    }
+
+    @media (pointer: fine) {
+      .cursor {
+        display: flex;
+      }
+    }
+
+    .cursor-ring {
+      position: absolute;
+      inset: 0;
+      border-radius: 50%;
+      border: 1.5px solid var(--ink);
+      background: transparent;
+      transform: scale(1);
+      transition:
+        transform 0.5s var(--ease),
+        background-color 0.4s var(--ease),
+        border-color 0.4s var(--ease),
+        opacity 0.4s var(--ease);
+    }
+
+    .cursor-dot {
+      position: relative;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--ink);
+      transition: transform 0.4s var(--ease), opacity 0.4s var(--ease), background-color 0.3s ease;
+    }
+
+    .cursor-label {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: #FFFFFF;
+      font-family: "Inter Tight", sans-serif;
+      font-weight: 600;
+      font-size: 9px;
+      line-height: 1.15;
+      letter-spacing: 0.14em;
+      opacity: 0;
+      transform: scale(0.7);
+      transition: opacity 0.45s var(--ease), transform 0.45s var(--ease);
+      text-align: center;
+    }
+
+    .cursor.open .cursor-ring {
+      transform: scale(1.75);
+      background: var(--cobalt);
+      border-color: var(--cobalt);
+    }
+
+    .cursor.open .cursor-dot {
+      opacity: 0;
+      transform: scale(0);
+    }
+
+    .cursor.open .cursor-label {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    .cursor.spine .cursor-ring {
+      transform: scale(0.72);
+    }
+
+    .cursor.btn .cursor-ring {
+      transform: scale(0.55);
+      border-color: var(--cobalt);
+    }
+
+    .cursor.btn .cursor-dot {
+      opacity: 1;
+      transform: scale(0.85);
+      background: var(--cobalt);
+    }
+
+    /* Detail Sheet */
+    .detail {
+      position: fixed;
+      inset: 0;
+      background: var(--sheet);
+      z-index: 60;
+      display: none;
+      overflow: hidden;
+      clip-path: inset(0 round 0);
+    }
+
+    .detail.is-open {
+      display: block;
+    }
+
+    .detail-close {
+      position: absolute;
+      left: 36px;
+      top: 28px;
+      z-index: 5;
+    }
+
+    .detail-brand {
+      position: absolute;
+      right: 36px;
+      top: 32px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      color: var(--cobalt);
+      z-index: 5;
+    }
+
+    .detail-grid {
+      width: 100%;
+      height: 100%;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: minmax(0, 1fr);
+      gap: 4vw;
+      padding: 64px 6vw 92px 7vw;
+      align-items: center;
+    }
+
+    .detail-left {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      min-height: 0;
+      max-height: 100%;
+      max-width: 520px;
+      gap: clamp(10px, 1.5vh, 16px);
+    }
+
+    .d-mask {
+      overflow: hidden;
+    }
+
+    .d-line {
+      display: block;
+      will-change: transform;
+    }
+
+    .d-sub {
+      color: var(--cobalt);
+    }
+
+    .d-title {
+      font-family: "Inter Tight", sans-serif;
+      font-weight: 600;
+      font-size: clamp(32px, 4.2vw, 64px);
+      line-height: 0.96;
+      letter-spacing: -0.03em;
+      color: var(--cobalt);
+    }
+
+    .d-meta {
+      font-family: "Inter Tight", sans-serif;
+      font-weight: 500;
+      font-size: 11.5px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .d-synopsis {
+      font-family: "Newsreader", Georgia, serif;
+      font-weight: 400;
+      font-size: clamp(14.5px, 1.8vh, 17px);
+      line-height: 1.45;
+      color: var(--ink);
+      max-width: 44ch;
+    }
+
+    .d-credit {
+      font-family: "Newsreader", Georgia, serif;
+      font-style: italic;
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    .d-synopsis {
+      font-family: "Newsreader", Georgia, serif;
+      font-weight: 400;
+      font-size: 17px;
+      line-height: 1.52;
+      color: var(--ink);
+      max-width: 44ch;
+    }
+
+    .d-credit {
+      font-family: "Newsreader", Georgia, serif;
+      font-style: italic;
+      font-size: 14.5px;
+      color: var(--muted);
+    }
+
+    .d-actions {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 12px;
+      margin-top: 4px;
+    }
+
+    .watch-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      height: 44px;
+      padding: 0 22px;
+      border: 1px solid var(--cobalt);
+      border-radius: 2px;
+      color: var(--cobalt);
+      background: transparent;
+      transition: background 0.3s var(--ease), color 0.3s var(--ease);
+    }
+
+    .watch-btn:hover,
+    .watch-btn.playing {
+      background: var(--cobalt);
+      color: var(--sheet);
+    }
+
+    .apple-link-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      height: 44px;
+      padding: 0 18px;
+      border: 1px solid rgba(20, 20, 20, 0.25);
+      border-radius: 2px;
+      color: var(--ink);
+      text-decoration: none;
+      transition: border-color 0.25s var(--ease), color 0.25s var(--ease);
+    }
+
+    .apple-link-btn:hover {
+      border-color: var(--cobalt);
+      color: var(--cobalt);
+    }
+
+    .detail-right {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 0;
+      height: 100%;
+      max-height: 100%;
+    }
+
+    .poster-svg {
+      height: 100%;
+      max-height: min(68vh, calc(100vh - 164px));
+      width: auto;
+      max-width: 100%;
+      filter: drop-shadow(0 28px 46px rgba(20, 16, 10, 0.24));
+    }
+
+    /* Track Index Drawer */
+    .drawer-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(20, 20, 20, 0.34);
+      z-index: 65;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.35s var(--ease);
+    }
+
+    .drawer-backdrop.open {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .drawer {
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      width: min(500px, 94vw);
+      background: var(--sheet);
+      border-left: 1px solid rgba(20, 20, 20, 0.16);
+      z-index: 70;
+      padding: 28px 30px 92px;
+      display: flex;
+      flex-direction: column;
+      transform: translateX(102%);
+      transition: transform 0.5s var(--ease);
+    }
+
+    .drawer.open {
+      transform: translateX(0);
+    }
+
+    .drawer-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 14px;
+      border-bottom: 1px solid rgba(31, 63, 176, 0.25);
+      color: var(--cobalt);
+    }
+
+    .artist-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      padding: 12px 0;
+      border-bottom: 1px solid rgba(20, 20, 20, 0.1);
+    }
+
+    .pill-btn {
+      font-family: "Inter Tight", sans-serif;
+      font-weight: 600;
+      font-size: 9px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 5px 8px;
+      border-radius: 2px;
+      border: 1px solid rgba(31, 63, 176, 0.3);
+      color: var(--cobalt);
+      transition: background 0.2s var(--ease), color 0.2s var(--ease);
+    }
+
+    .pill-btn.active,
+    .pill-btn:hover {
+      background: var(--cobalt);
+      color: var(--sheet);
+      border-color: var(--cobalt);
+    }
+
+    .drawer-list {
+      margin-top: 6px;
+      overflow-y: auto;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .drawer-item {
+      display: grid;
+      grid-template-columns: 44px 1fr auto;
+      align-items: center;
+      gap: 12px;
+      padding: 10px 6px;
+      border-bottom: 1px solid rgba(20, 20, 20, 0.1);
+      text-align: left;
+      transition: background 0.2s var(--ease), padding-left 0.25s var(--ease);
+    }
+
+    .drawer-item:hover {
+      background: rgba(31, 63, 176, 0.06);
+      padding-left: 10px;
+    }
+
+    .drawer-item.active .di-title {
+      color: var(--cobalt);
+    }
+
+    .di-cover {
+      width: 44px;
+      height: 44px;
+      border-radius: 2px;
+      object-fit: cover;
+      background: #E2DDD2;
+      border: 1px solid rgba(20, 20, 20, 0.15);
+    }
+
+    .di-main {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+      min-width: 0;
+    }
+
+    .di-title {
+      font-weight: 600;
+      font-size: 14.5px;
+      color: var(--ink);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .di-artist {
+      font-size: 10px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .di-year {
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--cobalt);
+    }
+
+    /* Info Modal */
+    .info-modal {
+      position: fixed;
+      inset: 0;
+      z-index: 80;
+      background: rgba(236, 232, 224, 0.96);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 36px 36px 96px;
+    }
+
+    .info-modal.open {
+      display: flex;
+    }
+
+    .info-card {
+      max-width: 560px;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    .info-card h2 {
+      font-size: clamp(28px, 3.6vw, 44px);
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      color: var(--cobalt);
+    }
+
+    .info-card p {
+      font-family: "Newsreader", Georgia, serif;
+      font-size: 18px;
+      line-height: 1.55;
+      color: var(--ink);
+    }
+
+    /* Mobile Responsive Overrides */
+    @media (max-width: 767px) {
+      .topbar {
+        height: 58px;
+        padding: 0 16px;
+      }
+
+      .brand {
+        gap: 10px;
+      }
+
+      .brand-line {
+        width: 20px;
+      }
+
+      .nav-right {
+        gap: 12px;
+      }
+
+      .nav-link {
+        display: none;
+      }
+
+      .halftone-col {
+        font-size: 18vw;
+        opacity: 0.72;
+      }
+
+      .ht-left {
+        left: 1vw;
+        top: 12vh;
+      }
+
+      .ht-right {
+        right: 1vw;
+        top: 10vh;
+      }
+
+      .caption-area {
+        top: calc(var(--cy) + var(--H) * 0.5 + 2.2vh);
+        gap: 5px;
+      }
+
+      .cap-title {
+        font-size: 23px;
+      }
+
+      .nav-arrow {
+        top: auto;
+        bottom: 132px;
+      }
+
+      .nav-arrow.prev {
+        left: 12px;
+      }
+
+      .nav-arrow.next {
+        left: auto;
+        right: 12px;
+      }
+
+      .timeline {
+        left: 16px;
+        right: 16px;
+        bottom: 84px;
+      }
+
+      .tl-year.odd-major {
+        display: none;
+      }
+
+      .audio-dock {
+        left: 12px;
+        right: 12px;
+        bottom: 24px;
+        height: 46px;
+        padding: 0 10px;
+        gap: 8px;
+      }
+
+      .dock-track-info {
+        max-width: 118px;
+      }
+
+      .dock-time {
+        display: none;
+      }
+
+      .vol-slider-wrap {
+        width: 54px;
+      }
+
+      .vol-pct-lbl {
+        display: none;
+      }
+
+      .footer {
+        left: 16px;
+        right: 16px;
+        bottom: 7px;
+      }
+
+      .detail {
+        overflow-y: auto;
+      }
+
+      .detail-close {
+        left: 16px;
+        top: 16px;
+      }
+
+      .detail-brand {
+        right: 16px;
+        top: 20px;
+      }
+
+      .detail-grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto;
+        height: auto;
+        min-height: 100%;
+        padding: 54px 18px 94px;
+        gap: 14px;
+        align-content: start;
+      }
+
+      .detail-left {
+        gap: 10px;
+      }
+
+      .detail-right {
+        order: -1;
+        height: auto;
+      }
+
+      .poster-svg {
+        height: min(32svh, 240px);
+        max-height: 240px;
+      }
+
+      .d-title {
+        font-size: 28px;
+      }
+
+      .d-synopsis {
+        font-size: 14.5px;
+        line-height: 1.4;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="bg-accents" aria-hidden="true"><div class="bg-accent-mid"></div></div>
+  <div class="paper-grain" aria-hidden="true"></div>
+
+  <!-- Top Navigation -->
+  <header class="topbar">
+    <div class="brand">
+      <a href="#top" class="lbl" id="brandHome" style="text-decoration:none;color:inherit;">TRACK ARCHIVE</a>
+      <span class="brand-line"></span>
+      <span class="lbl">RUS RAP 18—25</span>
+    </div>
+    <nav class="nav-right" aria-label="Навигация архива">
+      <button type="button" class="autoplay-pill" id="topAutoplayBtn" title="Автозапуск следующего трека при перелистывании">
+        <span class="autoplay-dot"></span>
+        <span class="lbl" id="topAutoplayLbl">АВТОПЛЕЙ: ВЫКЛ</span>
+      </button>
+      <button type="button" class="lbl nav-link" data-open-drawer>ИНДЕКС</button>
+      <button type="button" class="lbl nav-link" data-open-info="about">АРХИВ</button>
+      <button type="button" class="burger" id="burgerBtn" aria-label="Открыть каталог треков">
+        <span></span>
+        <span></span>
+      </button>
+    </nav>
+  </header>
+
+  <!-- Giant Background Halftone Vertical Typography -->
+  <div class="halftone-col ht-left" aria-hidden="true">ЗВУК</div>
+  <div class="halftone-col ht-right" aria-hidden="true">АРХИВ</div>
+
+  <!-- Floor Shadow -->
+  <div class="floor-shadow" aria-hidden="true"></div>
+
+  <!-- 3D Curved Shelf -->
+  <section class="shelf-wrap" id="shelfWrap" aria-label="Изогнутая полка треков">
+    <div class="stage" id="stage"></div>
+  </section>
+
+  <!-- Navigation Arrows -->
+  <button type="button" class="nav-arrow prev" id="prevBtn" aria-label="Предыдущий трек">
+    <svg width="24" height="12" viewBox="0 0 24 12" fill="none">
+      <path d="M6 1L1 6l5 5M1 6h23" stroke="currentColor" stroke-width="1.2" />
+    </svg>
+  </button>
+  <button type="button" class="nav-arrow next" id="nextBtn" aria-label="Следующий трек">
+    <svg width="24" height="12" viewBox="0 0 24 12" fill="none">
+      <path d="M18 1l5 5-5 5M23 6H0" stroke="currentColor" stroke-width="1.2" />
+    </svg>
+  </button>
+
+  <!-- Active Track Caption -->
+  <div class="caption-area" aria-live="polite">
+    <div class="mask-line cap-title-mask" id="capTitleMask">
+      <span class="cap-title" id="capTitle">Bandana</span>
+    </div>
+    <div class="mask-line cap-sub-mask" id="capSubMask">
+      <span class="cap-sub" id="capSub">BIG BABY TAPE &amp; KIZARU / BANDANA I</span>
+    </div>
+    <div class="cap-rule"></div>
+    <div class="mask-line cap-meta-mask" id="capMetaMask">
+      <span class="cap-meta" id="capMeta">2021 — TRAP / HIP-HOP</span>
+    </div>
+  </div>
+
+  <!-- Bottom Timeline Ruler (2018–2025) -->
+  <div class="timeline" id="timeline" role="slider" aria-label="Хронология релизов" aria-valuemin="2018" aria-valuemax="2025" aria-valuenow="2021">
+    <div class="tl-line"></div>
+    <div class="tl-ticks" id="tlTicks"></div>
+    <div class="tl-dot" id="tlDot"></div>
+  </div>
+
+  <!-- Persistent Bottom Audio & Volume Control Dock -->
+  <div class="audio-dock" id="audioDock" role="region" aria-label="Аудиоплеер и громкость">
+    <button type="button" class="dock-play-btn" id="dockPlayBtn" aria-label="Воспроизвести или поставить на паузу">
+      <svg id="dockPlayIcon" width="11" height="13" viewBox="0 0 12 14" fill="none">
+        <path d="M1.5 1.2L11 7L1.5 12.8V1.2Z" fill="currentColor" />
+      </svg>
+    </button>
+
+    <div class="dock-track-info">
+      <div class="eq-bars" aria-hidden="true">
+        <span></span><span></span><span></span>
+      </div>
+      <div class="dock-text-col">
+        <span class="dock-title" id="dockTitle">Bandana</span>
+        <span class="dock-sub" id="dockSub">ПАУЗА · BIG BABY TAPE &amp; KIZARU</span>
+      </div>
+    </div>
+
+    <button type="button" class="unlock-banner" id="unlockAudioBtn" title="Нажмите, чтобы разрешить звук">
+      ВКЛЮЧИТЬ ЗВУК
+    </button>
+
+    <div class="dock-progress-wrap">
+      <span class="dock-time" id="dockCurTime">0:00</span>
+      <div class="dock-seek" id="dockSeek" title="Перемотать превью">
+        <div class="dock-seek-track">
+          <div class="dock-seek-fill" id="dockSeekFill"></div>
+        </div>
+      </div>
+      <span class="dock-time" id="dockDurTime">0:30</span>
+    </div>
+
+    <div class="dock-vol-group" id="volGroup" title="Громкость (колесо мыши или ползунок)">
+      <button type="button" class="vol-mute-btn" id="volMuteBtn" aria-label="Выключить или включить звук">
+        <svg id="volIcon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+          <path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+          <path d="M19.07 4.93a10 10 0 0 1 0 14.14"></path>
+        </svg>
+      </button>
+      <div class="vol-slider-wrap">
+        <input
+          type="range"
+          class="vol-slider"
+          id="volSlider"
+          min="0"
+          max="100"
+          step="1"
+          value="30"
+          aria-label="Уровень громкости"
+        />
+      </div>
+      <span class="vol-pct-lbl" id="volPctLbl">30%</span>
+    </div>
+
+    <button type="button" class="dock-auto-btn" id="dockAutoBtn" title="Автопереключение при пролистывании">
+      AUTO
+    </button>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <span class="lbl" style="font-size:9px;opacity:0.75;">© CURVED ARCHIVE EDITION · ВЫБЕРИТЕ КНИГУ И НАЖМИТЕ PLAY</span>
+    <span class="lbl" style="font-size:9px;opacity:0.75;">OBLADAET / OG BUDA / 52 / KIZARU / TAPE / BATO / YASMI</span>
+  </footer>
+
+  <!-- Custom Cursor -->
+  <div class="cursor" id="cursor" aria-hidden="true">
+    <div class="cursor-ring"></div>
+    <div class="cursor-dot"></div>
+    <div class="cursor-label">
+      <span>OPEN</span>
+      <span style="font-size:7.5px;opacity:0.88;">ОТКРЫТЬ</span>
+    </div>
+  </div>
+
+  <!-- Full-screen Detail Sheet with Ink-Blot SVG Poster -->
+  <section class="detail" id="detailSheet" aria-hidden="true">
+    <button type="button" class="lbl box detail-close" id="detailCloseBtn">CLOSE / ЗАКРЫТЬ</button>
+    <div class="detail-brand">
+      <span class="lbl">TRACK ARCHIVE</span>
+      <span class="brand-line"></span>
+      <span class="lbl">RUS RAP</span>
+    </div>
+
+    <div class="detail-grid">
+      <div class="detail-left">
+        <div class="d-mask"><span class="d-line lbl d-sub" id="dSub">ARTIST / ALBUM</span></div>
+        <div class="d-mask"><h1 class="d-line d-title" id="dTitle">Bandana</h1></div>
+        <div class="d-mask"><span class="d-line d-meta" id="dMeta">2021 / TRAP / 2:31</span></div>
+        <div class="d-mask"><p class="d-line d-synopsis" id="dSynopsis"></p></div>
+        <div class="d-mask"><span class="d-line d-credit" id="dCredit"></span></div>
+        <div class="d-mask">
+          <div class="d-line d-actions">
+            <button type="button" class="lbl watch-btn" id="watchPreviewBtn">
+              <svg id="playBtnIcon" width="11" height="12" viewBox="0 0 11 12" fill="none">
+                <path d="M1 1l9 5-9 5V1z" fill="currentColor" />
+              </svg>
+              <span id="playBtnText">СЛУШАТЬ ПРЕВЬЮ / PLAY</span>
+            </button>
+            <a href="#" target="_blank" rel="noopener noreferrer" class="lbl apple-link-btn" id="appleMusicLink">
+              APPLE MUSIC ↗
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="detail-right">
+        <svg class="poster-svg" id="posterSvg" viewBox="0 0 474 900" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <filter id="inkFilter" x="-20%" y="-20%" width="140%" height="140%">
+              <feTurbulence type="fractalNoise" baseFrequency="0.011" numOctaves="3" seed="7" result="noise" />
+              <feDisplacementMap in="SourceGraphic" in2="noise" scale="120" xChannelSelector="R" yChannelSelector="G" />
+            </filter>
+            <mask id="inkMask" maskUnits="userSpaceOnUse">
+              <rect width="474" height="900" fill="#000000" />
+              <g filter="url(#inkFilter)" fill="#FFFFFF">
+                <circle class="ink-c" cx="150" cy="330" r="0" />
+                <circle class="ink-c" cx="340" cy="600" r="0" />
+                <circle class="ink-c" cx="250" cy="120" r="0" />
+                <circle class="ink-c" cx="90" cy="760" r="0" />
+                <circle class="ink-c" cx="400" cy="250" r="0" />
+                <circle class="ink-c" cx="260" cy="860" r="0" />
+                <circle class="ink-c" cx="230" cy="470" r="0" />
+              </g>
+            </mask>
+            <clipPath id="posterClip">
+              <rect x="0" y="0" width="474" height="900" rx="6" />
+            </clipPath>
+            <clipPath id="artSquareClip">
+              <rect x="76" y="138" width="336" height="336" rx="3" />
+            </clipPath>
+          </defs>
+
+          <g mask="url(#inkMask)" clip-path="url(#posterClip)">
+            <rect x="0" y="0" width="474" height="900" fill="#F4EFE4" />
+            <line x1="25" y1="0" x2="25" y2="900" stroke="#181511" stroke-opacity="0.22" stroke-width="2" />
+            <rect x="35" y="30" width="420" height="840" fill="none" stroke="#181511" stroke-opacity="0.2" stroke-width="1" />
+            <rect x="39" y="34" width="412" height="832" fill="none" stroke="#181511" stroke-opacity="0.08" stroke-width="1" />
+
+            <!-- Top Kicker -->
+            <text id="svgKicker" x="245" y="88" text-anchor="middle" fill="#6D6A63" font-family="Inter Tight, sans-serif" font-weight="600" font-size="14" letter-spacing="4">АРХИВ · 2021 · ТОМ № 06</text>
+
+            <!-- Centered Square Cover Passe-Partout (Higher) -->
+            <rect x="68" y="130" width="352" height="352" rx="4" fill="#FAF7F0" stroke="#181511" stroke-opacity="0.28" stroke-width="1.2" />
+            <rect x="76" y="138" width="336" height="336" rx="2" fill="#E3DDD0" />
+            <image id="posterCoverImg" x="76" y="138" width="336" height="336" preserveAspectRatio="xMidYMid slice" clip-path="url(#artSquareClip)" href="" />
+
+            <!-- Centered Track Title Directly Below Cover -->
+            <text id="svgTitle1" x="245" y="544" text-anchor="middle" fill="#141414" font-family="Newsreader, Georgia, serif" font-weight="500" font-size="34" letter-spacing="-0.4">Bandana</text>
+            <text id="svgTitle2" x="245" y="582" text-anchor="middle" fill="#141414" font-family="Newsreader, Georgia, serif" font-weight="500" font-size="34" letter-spacing="-0.4"></text>
+
+            <!-- Artist & Stamp -->
+            <text id="svgArtist" x="245" y="636" text-anchor="middle" fill="#1F3FB0" font-family="Inter Tight, sans-serif" font-weight="600" font-size="15" letter-spacing="3.2">BIG BABY TAPE &amp; KIZARU</text>
+            <rect x="200" y="660" width="90" height="26" fill="none" stroke="#181511" stroke-opacity="0.32" stroke-width="1" />
+            <text x="245" y="677" text-anchor="middle" fill="#6D6A63" font-family="Inter Tight, sans-serif" font-weight="600" font-size="12" letter-spacing="3">АРХИВ</text>
+          </g>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- Track Index Drawer -->
+  <div class="drawer-backdrop" id="drawerBackdrop"></div>
+  <aside class="drawer" id="drawer" aria-hidden="true">
+    <div class="drawer-head">
+      <span class="lbl">КАТАЛОГ РЕЛИЗОВ (12)</span>
+      <button type="button" class="lbl box" id="drawerCloseBtn">ЗАКРЫТЬ</button>
+    </div>
+    <div class="artist-pills" id="artistPills"></div>
+    <div class="drawer-list" id="drawerList"></div>
+  </aside>
+
+  <!-- About Modal -->
+  <div class="info-modal" id="infoModal" aria-hidden="true">
+    <div class="info-card">
+      <span class="lbl" style="color:var(--cobalt);">О КОЛЛЕКЦИИ</span>
+      <h2 id="infoTitle">Curved Track Archive</h2>
+      <p id="infoBody">
+        Интерактивный архив знаковых треков новой школы (2018—2025): OBLADAET, OG Buda, FRIENDLY THUG 52 NGG, kizaru, Big Baby Tape, BATO и YASMI. Вращайте полку колесом мыши, перетаскивайте корешки или кликайте по таймлайну — при включённом воспроизведении треки автоматически переключаются на лету.
+      </p>
+      <div>
+        <button type="button" class="lbl box" id="infoCloseBtn">ВЕРНУТЬСЯ К ПОЛКЕ</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      "use strict";
+
+      /* ---------------------------------------------------------
+         1. VERIFIED TRACK CATALOG WITH EXACT APPLE MUSIC IDS
+         --------------------------------------------------------- */
+      const TRACKS = [
+        {
+          id: "gimme",
+          title: "Gimme the Loot",
+          artist: "Big Baby Tape",
+          album: "Dragonborn",
+          year: 2018,
+          genre: "TRAP",
+          duration: "2:15",
+          cloth: "#5C2228",
+          appleCollectionId: 1442022364,
+          appleSongId: 1442023047,
+          searchQuery: "Big Baby Tape Gimme the Loot",
+          matchArtist: "big baby tape",
+          matchTitle: "gimme the loot",
+          appleUrl: "https://music.apple.com/ru/album/dragonborn/1442022364",
+          synopsis: "Прорывной сингл с дебютного альбома Dragonborn, переосмысливший классический сэмпл под тяжелый российский трэп-звук с плотными 808-ми.",
+          credit: "Продюсер: DJ Tape (Big Baby Tape). Альбом «Dragonborn», 2018."
+        },
+        {
+          id: "wrong",
+          title: "WRONG",
+          artist: "OBLADAET",
+          album: "ICE CREAM",
+          year: 2018,
+          genre: "HIP-HOP / TRAP",
+          duration: "2:52",
+          cloth: "#1E3254",
+          appleCollectionId: 1445028501,
+          appleSongId: 1445028889,
+          searchQuery: "OBLADAET WRONG",
+          matchArtist: "obladaet",
+          matchTitle: "wrong",
+          appleUrl: "https://music.apple.com/ru/album/ice-cream/1445028501",
+          synopsis: "Холодная минималистичная аранжировка и фирменная скоростная подача с альбома ICE CREAM, закрепившая стилистический вектор Назара.",
+          credit: "Исполнитель: OBLADAET. Альбом «ICE CREAM», 2018."
+        },
+        {
+          id: "dejavu",
+          title: "Дежавю",
+          artist: "kizaru",
+          album: "Karmageddon",
+          year: 2019,
+          genre: "TRAP / CLOUD",
+          duration: "2:53",
+          cloth: "#252932",
+          appleCollectionId: 1650807622,
+          appleSongId: 1650807644,
+          searchQuery: "kizaru Дежавю",
+          matchArtist: "kizaru",
+          matchTitle: "дежавю",
+          appleUrl: "https://music.apple.com/ru/album/karmageddon/1650807622",
+          synopsis: "Главный хит с релиза Karmageddon — гипнотический барселонский трэп с запоминающимся хуком и отточенной ритмикой.",
+          credit: "Исполнитель: kizaru. Альбом «Karmageddon», 2019."
+        },
+        {
+          id: "beckham",
+          title: "DAVID BECKHAM",
+          artist: "OBLADAET",
+          album: "PLAYERS CLUB",
+          year: 2021,
+          genre: "UK DRILL",
+          duration: "2:28",
+          cloth: "#20392E",
+          appleCollectionId: 1556835599,
+          appleSongId: 1556835609,
+          searchQuery: "OBLADAET DAVID BECKHAM",
+          matchArtist: "obladaet",
+          matchTitle: "david beckham",
+          appleUrl: "https://music.apple.com/ru/album/players-club/1556835599",
+          synopsis: "Эталонный UK-drill с альбома PLAYERS CLUB: ломаный бас, холодные струнные и точные футбольные отсылки в каждой строчке.",
+          credit: "Исполнитель: OBLADAET. Альбом «PLAYERS CLUB», 2021."
+        },
+        {
+          id: "nakasse",
+          title: "На кассе",
+          artist: "OG Buda & 163ONMYNECK",
+          album: "FREERIO",
+          year: 2021,
+          genre: "DETROIT TRAP",
+          duration: "2:12",
+          cloth: "#6A3A22",
+          appleCollectionId: 1652721902,
+          appleSongId: 1652722110,
+          searchQuery: "OG Buda На кассе",
+          matchArtist: "og buda",
+          matchTitle: "на кассе",
+          appleUrl: "https://music.apple.com/ru/album/freerio/1652721902",
+          synopsis: "Яркий детройт-бэнгер с культового микстейпа FREERIO, задавшего волну агрессивного пианино и плотного панчлайн-рэпа.",
+          credit: "Исполнители: OG Buda & 163ONMYNECK. Альбом «FREERIO», 2021."
+        },
+        {
+          id: "bandana",
+          title: "Bandana",
+          artist: "Big Baby Tape & kizaru",
+          album: "BANDANA I",
+          year: 2021,
+          genre: "TRAP / HIP-HOP",
+          duration: "2:31",
+          cloth: "#1C2E59",
+          appleCollectionId: 1650765462,
+          appleSongId: 1650765471,
+          searchQuery: "Big Baby Tape kizaru Bandana",
+          matchArtist: "big baby tape",
+          matchTitle: "bandana",
+          appleUrl: "https://music.apple.com/ru/album/bandana-i/1650765462",
+          synopsis: "Заглавный трек совместного альбома BANDANA I — абсолютный рекордсмен стримингов и символ эпохи совместных релизов.",
+          credit: "Исполнители: Big Baby Tape & kizaru. Альбом «BANDANA I», 2021."
+        },
+        {
+          id: "jungle",
+          title: "JUNGLE",
+          artist: "BATO, JEEMBO & SEEMEE",
+          album: "JUNGLE (Single)",
+          year: 2022,
+          genre: "DARK TRAP",
+          duration: "2:44",
+          cloth: "#2D2338",
+          appleCollectionId: 1624023559,
+          appleSongId: 1624023561,
+          searchQuery: "BATO JEEMBO SEEMEE JUNGLE",
+          matchArtist: "bato",
+          matchTitle: "jungle",
+          appleUrl: "https://music.apple.com/ru/album/jungle-single/1624023559",
+          synopsis: "Мрачный индустриальный бэнгер от BATO при участии JEEMBO и SEEMEE — тяжелый перегруженный бас и бескомпромиссная энергетика.",
+          credit: "Исполнители: BATO, JEEMBO & SEEMEE. Сингл «JUNGLE», 2022."
+        },
+        {
+          id: "6am",
+          title: "6AM в Будапеште",
+          artist: "OG Buda",
+          album: "6AM в Будапеште (Single)",
+          year: 2023,
+          genre: "MELODIC RAP",
+          duration: "2:57",
+          cloth: "#4F2433",
+          appleCollectionId: 1681133649,
+          appleSongId: 1681133650,
+          searchQuery: "OG Buda 6AM в Будапеште",
+          matchArtist: "og buda",
+          matchTitle: "будапешт",
+          appleUrl: "https://music.apple.com/ru/album/6am-%D0%B2-%D0%B1%D1%83%D0%B4%D0%B0%D0%BF%D0%B5%D1%88%D1%82%D0%B5-single/1681133649",
+          synopsis: "Исповедальный ночной монолог на рассвете: меланхоличный сэмпл и рефлексия о пути от улиц Тюмени до больших арен.",
+          credit: "Исполнитель: OG Buda. Сингл «6AM в Будапеште», 2023."
+        },
+        {
+          id: "nogletcher",
+          title: "No Gletcher Gang",
+          artist: "FRIENDLY THUG 52 NGG",
+          album: "Cristoforo Colombo",
+          year: 2023,
+          genre: "WEST COAST / 52",
+          duration: "2:36",
+          cloth: "#22342C",
+          appleCollectionId: 1714308349,
+          appleSongId: 1714308354,
+          searchQuery: "FRIENDLY THUG 52 NGG No Gletcher Gang",
+          matchArtist: "friendly thug 52 ngg",
+          matchTitle: "no gletcher gang",
+          appleUrl: "https://music.apple.com/ru/album/cristoforo-colombo/1714308349",
+          synopsis: "Тягучий петербургский вест-кост с альбома Cristoforo Colombo: честная уличная хроника, неторопливый грув и философия 52.",
+          credit: "Исполнитель: FRIENDLY THUG 52 NGG. Альбом «Cristoforo Colombo», 2023."
+        },
+        {
+          id: "yasmishka",
+          title: "Ясмишка делаешь",
+          artist: "YASMI",
+          album: "Showbiz 162",
+          year: 2024,
+          genre: "HIP-HOP / 52",
+          duration: "2:19",
+          cloth: "#212B3A",
+          appleCollectionId: 1768733213,
+          appleSongId: 1768733216,
+          searchQuery: "YASMI Ясмишка делаешь",
+          matchArtist: "yasmi",
+          matchTitle: "ясмишка",
+          appleUrl: "https://music.apple.com/ru/album/showbiz-162/1768733213",
+          synopsis: "Фирменный стильный репрезент с альбома Showbiz 162: качающий минималистичный бит и уверенная харизма петербургской сцены.",
+          credit: "Исполнитель: YASMI. Альбом «Showbiz 162», 2024."
+        },
+        {
+          id: "claus",
+          title: "CLAUS",
+          artist: "OBLADAET & YASMI",
+          album: "735",
+          year: 2025,
+          genre: "TRAP / DRILL",
+          duration: "2:04",
+          cloth: "#1D314F",
+          appleCollectionId: 1800185252,
+          appleSongId: 1800185255,
+          searchQuery: "OBLADAET YASMI CLAUS",
+          matchArtist: "obladaet",
+          matchTitle: "claus",
+          appleUrl: "https://music.apple.com/ru/album/735/1800185252",
+          synopsis: "Совместный трек OBLADAET и YASMI с релиза 735 — ледяной кинематографичный продакшн и выверенная смена флоу.",
+          credit: "Исполнители: OBLADAET & YASMI. Альбом «735», 2025."
+        },
+        {
+          id: "aist",
+          title: "AIST",
+          artist: "FRIENDLY THUG 52 NGG",
+          album: "Graf Monte-Cristo / Most Valuable Pirate",
+          year: 2025,
+          genre: "HIP-HOP / 52",
+          duration: "2:41",
+          cloth: "#5B2723",
+          appleCollectionId: 1809988892,
+          appleSongId: 1809988896,
+          searchQuery: "FRIENDLY THUG 52 NGG AIST",
+          matchArtist: "friendly thug 52 ngg",
+          matchTitle: "aist",
+          appleUrl: "https://music.apple.com/ru/album/graf-monte-cristo-most-valuable-pirate/1809988892",
+          synopsis: "Атмосферный трек с альбома Graf Monte-Cristo / Most Valuable Pirate — кинематографичные клавиши, глубокий бас и лирика без лишнего пафоса.",
+          credit: "Исполнитель: FRIENDLY THUG 52 NGG. Альбом «Graf Monte-Cristo», 2025."
+        }
+      ];
+
+      const N = TRACKS.length;
+      const TOTAL_VIRTUAL = N * 3;
+      const INITIAL_INDEX = 5; // Bandana
+
+      /* ---------------------------------------------------------
+         2. STATE & DOM REFERENCES
+         --------------------------------------------------------- */
+      let s = INITIAL_INDEX + N;
+      let T = INITIAL_INDEX + N;
+      let activeFilm = INITIAL_INDEX;
+
+      let dragging = false;
+      let dragMoved = false;
+      let dragStartX = 0;
+      let dragT0 = 0;
+      let wheelTimeout = null;
+      let autoSwitchTimeout = null;
+
+      let detailOpen = false;
+      let detailAnim = null;
+      let detailCloseAnim = null;
+      let detailMaskTimers = [];
+
+      let mx = window.innerWidth * 0.5;
+      let my = window.innerHeight * 0.5;
+      let cx = mx;
+      let cy = my;
+      let tiltX = 0;
+      let tiltY = 0;
+
+      const lifts = new Float32Array(TOTAL_VIRTUAL);
+      let hoveredVirtual = -1;
+
+      const stageEl = document.getElementById("stage");
+      const shelfWrapEl = document.getElementById("shelfWrap");
+      const timelineEl = document.getElementById("timeline");
+      const tlTicksEl = document.getElementById("tlTicks");
+      const tlDotEl = document.getElementById("tlDot");
+
+      const capTitleMask = document.getElementById("capTitleMask");
+      const capSubMask = document.getElementById("capSubMask");
+      const capMetaMask = document.getElementById("capMetaMask");
+      let capTitleEl = document.getElementById("capTitle");
+      let capSubEl = document.getElementById("capSub");
+      let capMetaEl = document.getElementById("capMeta");
+
+      const cursorEl = document.getElementById("cursor");
+      const detailSheet = document.getElementById("detailSheet");
+      const posterCoverImg = document.getElementById("posterCoverImg");
+      const inkCircles = Array.from(document.querySelectorAll(".ink-c"));
+
+      const svgKickerEl = document.getElementById("svgKicker");
+      const svgTitle1El = document.getElementById("svgTitle1");
+      const svgTitle2El = document.getElementById("svgTitle2");
+      const svgArtistEl = document.getElementById("svgArtist");
+
+      const audioDock = document.getElementById("audioDock");
+      const dockPlayBtn = document.getElementById("dockPlayBtn");
+      const dockPlayIcon = document.getElementById("dockPlayIcon");
+      const dockTitleEl = document.getElementById("dockTitle");
+      const dockSubEl = document.getElementById("dockSub");
+      const dockCurTimeEl = document.getElementById("dockCurTime");
+      const dockDurTimeEl = document.getElementById("dockDurTime");
+      const dockSeekEl = document.getElementById("dockSeek");
+      const dockSeekFillEl = document.getElementById("dockSeekFill");
+
+      const volMuteBtn = document.getElementById("volMuteBtn");
+      const volIcon = document.getElementById("volIcon");
+      const volSlider = document.getElementById("volSlider");
+      const volPctLbl = document.getElementById("volPctLbl");
+      const volGroup = document.getElementById("volGroup");
+
+      const topAutoplayBtn = document.getElementById("topAutoplayBtn");
+      const topAutoplayLbl = document.getElementById("topAutoplayLbl");
+      const dockAutoBtn = document.getElementById("dockAutoBtn");
+      const unlockAudioBtn = document.getElementById("unlockAudioBtn");
+
+      const watchPreviewBtn = document.getElementById("watchPreviewBtn");
+      const playBtnIcon = document.getElementById("playBtnIcon");
+      const playBtnText = document.getElementById("playBtnText");
+      const appleMusicLink = document.getElementById("appleMusicLink");
+
+      const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+      /* ---------------------------------------------------------
+         3. BUILD 36 VINTAGE BOOKS (SPINES + COVERS)
+         --------------------------------------------------------- */
+      const tapeNodes = [];
+      const coverImgsByTrack = Array.from({ length: N }, () => []);
+      const spineImgsByTrack = Array.from({ length: N }, () => []);
+
+      for (let v = 0; v < TOTAL_VIRTUAL; v++) {
+        const i = v % N;
+        const tr = TRACKS[i];
+        const volStr = String(i + 1).padStart(2, "0");
+
+        const tape = document.createElement("div");
+        tape.className = "tape";
+        tape.dataset.v = String(v);
+        tape.dataset.i = String(i);
+
+        // Spine face (.sp)
+        const sp = document.createElement("div");
+        sp.className = "face sp";
+        sp.style.setProperty("--cloth", tr.cloth);
+        sp.innerHTML = `
+          <span class="sp-vol">№ ${volStr}</span>
+          <div class="sp-thumb-wrap">
+            <img class="sp-thumb" alt="${tr.title}" loading="lazy" />
+          </div>
+          <div class="sp-title-wrap">
+            <span class="sp-title">${tr.title}</span>
+          </div>
+          <div class="sp-foot">
+            <span class="sp-artist">${tr.artist.split("&")[0].split(",")[0].trim()}</span>
+            <span class="sp-vhs">АРХИВ</span>
+          </div>
+        `;
+
+        // Outer book cover face (.cv) — Centered Plate & Compact Text Directly Below
+        const cv = document.createElement("div");
+        cv.className = "face cv";
+        cv.innerHTML = `
+          <div class="cv-inner-border"></div>
+          <div class="cv-head">
+            <span>АРХИВ · ${tr.year} · ТОМ № ${volStr}</span>
+          </div>
+          <div class="cv-plate-wrap">
+            <img class="cv-cover-img" alt="${tr.artist} — ${tr.title}" />
+            <div class="cv-fallback-art">
+              <span class="cv-fallback-code">${tr.title}</span>
+            </div>
+          </div>
+          <div class="cv-below">
+            <div class="cv-title">${tr.title}</div>
+            <div class="cv-artist">${tr.artist}</div>
+            <span class="cv-stamp">АРХИВ</span>
+          </div>
+        `;
+
+        tape.appendChild(sp);
+        tape.appendChild(cv);
+        stageEl.appendChild(tape);
+
+        const cvImg = cv.querySelector(".cv-cover-img");
+        const spImg = sp.querySelector(".sp-thumb");
+        coverImgsByTrack[i].push(cvImg);
+        spineImgsByTrack[i].push(spImg);
+
+        tapeNodes.push({ el: tape, sp, cv, v, i });
+      }
+
+      /* ---------------------------------------------------------
+         4. BUILD TIMELINE RULER (2018–2025) & DRAWER INDEX
+         --------------------------------------------------------- */
+      const MIN_YEAR = 2018;
+      const MAX_YEAR = 2025;
+      const YEAR_SPAN = MAX_YEAR - MIN_YEAR;
+
+      for (let y = MIN_YEAR; y <= MAX_YEAR; y++) {
+        const pct = ((y - MIN_YEAR) / YEAR_SPAN) * 100;
+        const tick = document.createElement("div");
+        tick.className = "tl-tick major";
+        tick.style.left = pct + "%";
+        tlTicksEl.appendChild(tick);
+
+        const lbl = document.createElement("div");
+        lbl.className = "tl-year" + ((y - MIN_YEAR) % 2 === 1 ? " odd-major" : "");
+        if (y === MIN_YEAR) lbl.classList.add("first");
+        if (y === MAX_YEAR) lbl.classList.add("last");
+        lbl.style.left = pct + "%";
+        lbl.textContent = String(y);
+        tlTicksEl.appendChild(lbl);
+
+        if (y < MAX_YEAR) {
+          for (let q = 1; q <= 3; q++) {
+            const qPct = ((y + q * 0.25 - MIN_YEAR) / YEAR_SPAN) * 100;
+            const mTick = document.createElement("div");
+            mTick.className = "tl-tick minor";
+            mTick.style.left = qPct + "%";
+            tlTicksEl.appendChild(mTick);
+          }
+        }
+      }
+
+      const drawerEl = document.getElementById("drawer");
+      const drawerBackdrop = document.getElementById("drawerBackdrop");
+      const drawerListEl = document.getElementById("drawerList");
+      const artistPillsEl = document.getElementById("artistPills");
+      let currentArtistFilter = "ALL";
+      const drawerRows = [];
+
+      const FILTER_TAGS = ["ALL", "Big Baby Tape", "kizaru", "OBLADAET", "OG Buda", "FRIENDLY THUG 52 NGG", "BATO", "YASMI"];
+
+      FILTER_TAGS.forEach((tag) => {
+        const btn = document.createElement("button");
+        btn.type = "button";
+        btn.className = "pill-btn" + (tag === "ALL" ? " active" : "");
+        btn.textContent = tag === "ALL" ? "ВСЕ (12)" : tag;
+        btn.addEventListener("click", () => {
+          currentArtistFilter = tag;
+          Array.from(artistPillsEl.children).forEach((c) => c.classList.toggle("active", c === btn));
+          renderDrawerState();
+        });
+        artistPillsEl.appendChild(btn);
+      });
+
+      TRACKS.forEach((tr, idx) => {
+        const item = document.createElement("button");
+        item.type = "button";
+        item.className = "drawer-item";
+        item.innerHTML = `
+          <img class="di-cover" alt="${tr.title}" />
+          <div class="di-main">
+            <span class="di-title">${tr.title}</span>
+            <span class="di-artist">${tr.artist} — ${tr.album}</span>
+          </div>
+          <span class="di-year">${tr.year}</span>
+        `;
+        item.addEventListener("click", () => {
+          closeDrawer();
+          if (detailOpen) closeDetail(true);
+          jumpToFilmIndex(idx);
+        });
+        drawerListEl.appendChild(item);
+        drawerRows.push({ item, img: item.querySelector(".di-cover"), idx, tr });
+      });
+
+      function renderDrawerState() {
+        drawerRows.forEach(({ item, idx, tr }) => {
+          item.classList.toggle("active", idx === activeFilm);
+          const match = currentArtistFilter === "ALL" || tr.artist.toLowerCase().includes(currentArtistFilter.toLowerCase());
+          item.style.display = match ? "grid" : "none";
+        });
+      }
+
+      /* ---------------------------------------------------------
+         5. AUDIO ENGINE: QUIET START, INSTANT SWITCH & VOLUME
+         --------------------------------------------------------- */
+      function readStorage(key, fallback) {
+        try {
+          const val = localStorage.getItem(key);
+          return val !== null ? val : fallback;
+        } catch (_) {
+          return fallback;
+        }
+      }
+
+      function writeStorage(key, value) {
+        try {
+          localStorage.setItem(key, value);
+        } catch (_) {}
+      }
+
+      let currentAudio = null;
+      let audioGenId = 0;
+      let playingIdx = -1;
+      let isAudioPlaying = false;
+      let autoplayEnabled = false;
+      let shouldResumeOnSwitch = false;
+      let audioBlockedByPolicy = false;
+
+      let savedVol = parseInt(readStorage("archive_vol_v2", "30"), 10);
+      if (Number.isNaN(savedVol) || savedVol < 0 || savedVol > 100) savedVol = 30;
+      let volumeLevel = savedVol / 100;
+      let isMuted = readStorage("archive_muted", "0") === "1";
+      let lastNonZeroVolume = volumeLevel > 0.02 ? volumeLevel : 0.3;
+
+      let audioCtx = null;
+      let gainNode = null;
+      let mediaSourceMap = new WeakMap();
+
+      function computeEffectiveGain() {
+        if (isMuted || volumeLevel <= 0.001) return 0;
+        return Math.max(0, Math.min(1, Math.pow(volumeLevel, 1.75)));
+      }
+
+      function applyVolumeToElement(el) {
+        if (!el) return;
+        const g = computeEffectiveGain();
+        el.muted = g === 0;
+        try {
+          el.volume = g;
+        } catch (_) {}
+
+        if (gainNode && audioCtx) {
+          try {
+            gainNode.gain.setValueAtTime(g, audioCtx.currentTime);
+          } catch (_) {
+            gainNode.gain.value = g;
+          }
+        }
+      }
+
+      function ensureWebAudioGain(el) {
+        const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) || (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
+        if (!isIOS || !el) return;
+        try {
+          const Ctx = window.AudioContext || window.webkitAudioContext;
+          if (!Ctx) return;
+          if (!audioCtx) {
+            audioCtx = new Ctx();
+            gainNode = audioCtx.createGain();
+            gainNode.connect(audioCtx.destination);
+          }
+          if (audioCtx.state === "suspended") {
+            audioCtx.resume().catch(() => {});
+          }
+          if (!mediaSourceMap.has(el)) {
+            const srcNode = audioCtx.createMediaElementSource(el);
+            srcNode.connect(gainNode);
+            mediaSourceMap.set(el, srcNode);
+          }
+          applyVolumeToElement(el);
+        } catch (_) {}
+      }
+
+      function updateVolumeUI() {
+        const effectivePct = isMuted ? 0 : Math.round(volumeLevel * 100);
+        volSlider.value = String(effectivePct);
+        volSlider.style.setProperty("--vol-pct", effectivePct + "%");
+        volPctLbl.textContent = effectivePct + "%";
+
+        if (effectivePct === 0) {
+          volIcon.innerHTML = `
+            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+            <line x1="23" y1="9" x2="17" y2="15"></line>
+            <line x1="17" y1="9" x2="23" y2="15"></line>
+          `;
+        } else if (effectivePct < 45) {
+          volIcon.innerHTML = `
+            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+            <path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+          `;
+        } else {
+          volIcon.innerHTML = `
+            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+            <path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+            <path d="M19.07 4.93a10 10 0 0 1 0 14.14"></path>
+          `;
+        }
+
+        applyVolumeToElement(currentAudio);
+      }
+
+      function setVolumeFromPercent(pct) {
+        const clamped = Math.max(0, Math.min(100, Math.round(pct)));
+        volumeLevel = clamped / 100;
+        if (clamped === 0) {
+          isMuted = true;
+        } else {
+          isMuted = false;
+          lastNonZeroVolume = volumeLevel;
+        }
+        writeStorage("archive_vol_v2", String(clamped));
+        writeStorage("archive_muted", isMuted ? "1" : "0");
+        updateVolumeUI();
+      }
+
+      function toggleMute() {
+        if (isMuted || volumeLevel <= 0.01) {
+          isMuted = false;
+          if (volumeLevel <= 0.01) volumeLevel = lastNonZeroVolume || 0.3;
+        } else {
+          isMuted = true;
+        }
+        writeStorage("archive_vol_v2", String(Math.round(volumeLevel * 100)));
+        writeStorage("archive_muted", isMuted ? "1" : "0");
+        updateVolumeUI();
+      }
+
+      function updateAutoplayUI() {
+        topAutoplayBtn.classList.toggle("is-on", autoplayEnabled);
+        topAutoplayLbl.textContent = autoplayEnabled ? "АВТОПЛЕЙ: ВКЛ" : "АВТОПЛЕЙ: ВЫКЛ";
+        dockAutoBtn.classList.toggle("is-on", autoplayEnabled);
+      }
+
+      function setAutoplay(enabled) {
+        autoplayEnabled = enabled;
+        updateAutoplayUI();
+        if (enabled && !isAudioPlaying) {
+          shouldResumeOnSwitch = true;
+          playTrackByIndex(activeFilm, false);
+        }
+      }
+
+      function formatSeconds(sec) {
+        if (!Number.isFinite(sec) || sec < 0) return "0:00";
+        const m = Math.floor(sec / 60);
+        const sVal = Math.floor(sec % 60);
+        return m + ":" + String(sVal).padStart(2, "0");
+      }
+
+      function syncPlayerUI(customStatus) {
+        const tr = TRACKS[activeFilm];
+        const activePlaying = isAudioPlaying && playingIdx === activeFilm;
+
+        audioDock.classList.toggle("is-playing", activePlaying);
+        dockTitleEl.textContent = tr.title;
+
+        if (customStatus) {
+          dockSubEl.textContent = customStatus + " · " + tr.artist;
+        } else if (activePlaying) {
+          dockSubEl.textContent = "ИГРАЕТ ПРЕВЬЮ · " + tr.artist;
+        } else if (audioBlockedByPolicy) {
+          dockSubEl.textContent = "НАЖМИТЕ PLAY · " + tr.artist;
+        } else {
+          dockSubEl.textContent = "ПАУЗА · " + tr.artist;
+        }
+
+        if (activePlaying) {
+          dockPlayIcon.innerHTML = `<rect x="1.5" y="1" width="3.2" height="12" fill="currentColor"/><rect x="7.3" y="1" width="3.2" height="12" fill="currentColor"/>`;
+          watchPreviewBtn.classList.add("playing");
+          playBtnText.textContent = "ПАУЗА / PAUSE";
+          playBtnIcon.innerHTML = `<rect x="1" y="1" width="3" height="10" fill="currentColor"/><rect x="7" y="1" width="3" height="10" fill="currentColor"/>`;
+        } else {
+          dockPlayIcon.innerHTML = `<path d="M1.5 1.2L11 7L1.5 12.8V1.2Z" fill="currentColor" />`;
+          watchPreviewBtn.classList.remove("playing");
+          playBtnText.textContent = "СЛУШАТЬ ПРЕВЬЮ / PLAY";
+          playBtnIcon.innerHTML = `<path d="M1 1l9 5-9 5V1z" fill="currentColor" />`;
+        }
+
+        unlockAudioBtn.classList.toggle("visible", audioBlockedByPolicy);
+      }
+
+      function killActiveAudio(resetProgress = true) {
+        audioGenId += 1;
+        if (currentAudio) {
+          const old = currentAudio;
+          currentAudio = null;
+          try {
+            old.pause();
+            old.muted = true;
+            old.volume = 0;
+            old.removeAttribute("src");
+            old.load();
+          } catch (_) {}
+        }
+        isAudioPlaying = false;
+        playingIdx = -1;
+        if (resetProgress) {
+          dockSeekFillEl.style.width = "0%";
+          dockCurTimeEl.textContent = "0:00";
+          dockDurTimeEl.textContent = "0:30";
+        }
+      }
+
+      async function playTrackByIndex(idx, isUserGesture = false) {
+        const tr = TRACKS[idx];
+        if (!tr) return;
+
+        killActiveAudio(true);
+        const myGen = ++audioGenId;
+        playingIdx = idx;
+        shouldResumeOnSwitch = true;
+
+        if (!tr.previewUrl) {
+          syncPlayerUI("ПОИСК АУДИО");
+          await resolveSingleTrackMedia(idx);
+          if (myGen !== audioGenId || activeFilm !== idx) return;
+        }
+
+        if (!tr.previewUrl) {
+          isAudioPlaying = false;
+          playingIdx = -1;
+          syncPlayerUI("ПРЕВЬЮ НЕДОСТУПНО");
+          return;
+        }
+
+        const el = new Audio();
+        el.crossOrigin = "anonymous";
+        el.preload = "auto";
+        el.src = tr.previewUrl;
+        applyVolumeToElement(el);
+        ensureWebAudioGain(el);
+        currentAudio = el;
+
+        el.addEventListener("loadedmetadata", () => {
+          if (myGen !== audioGenId || currentAudio !== el) return;
+          applyVolumeToElement(el);
+          if (Number.isFinite(el.duration) && el.duration > 0) {
+            dockDurTimeEl.textContent = formatSeconds(el.duration);
+          }
+        });
+
+        el.addEventListener("canplay", () => {
+          if (myGen !== audioGenId || currentAudio !== el) return;
+          applyVolumeToElement(el);
+        });
+
+        el.addEventListener("playing", () => {
+          if (myGen !== audioGenId || currentAudio !== el) return;
+          applyVolumeToElement(el);
+        });
+
+        el.addEventListener("timeupdate", () => {
+          if (myGen !== audioGenId || currentAudio !== el) return;
+          const dur = Number.isFinite(el.duration) && el.duration > 0 ? el.duration : 30;
+          const pct = Math.min(100, (el.currentTime / dur) * 100);
+          dockSeekFillEl.style.width = pct + "%";
+          dockCurTimeEl.textContent = formatSeconds(el.currentTime);
+          dockDurTimeEl.textContent = formatSeconds(dur);
+        });
+
+        el.addEventListener("ended", () => {
+          if (myGen !== audioGenId || currentAudio !== el) return;
+          killActiveAudio(true);
+          shouldResumeOnSwitch = false;
+          syncPlayerUI();
+        });
+
+        el.addEventListener("error", () => {
+          if (myGen !== audioGenId || currentAudio !== el) return;
+          killActiveAudio(true);
+          syncPlayerUI("ОШИБКА ПОТОКА");
+        });
+
+        try {
+          await el.play();
+          if (myGen !== audioGenId || currentAudio !== el || activeFilm !== idx) {
+            try {
+              el.pause();
+              el.muted = true;
+              el.removeAttribute("src");
+              el.load();
+            } catch (_) {}
+            return;
+          }
+          applyVolumeToElement(el);
+          isAudioPlaying = true;
+          audioBlockedByPolicy = false;
+          syncPlayerUI();
+        } catch (err) {
+          if (myGen !== audioGenId) return;
+          killActiveAudio(true);
+          if (!isUserGesture) {
+            audioBlockedByPolicy = true;
+          }
+          syncPlayerUI();
+        }
+      }
+
+      function togglePlayPause() {
+        if (isAudioPlaying && currentAudio && playingIdx === activeFilm) {
+          try {
+            currentAudio.pause();
+          } catch (_) {}
+          isAudioPlaying = false;
+          shouldResumeOnSwitch = false;
+          syncPlayerUI();
+        } else if (currentAudio && playingIdx === activeFilm && currentAudio.src) {
+          applyVolumeToElement(currentAudio);
+          ensureWebAudioGain(currentAudio);
+          currentAudio
+            .play()
+            .then(() => {
+              isAudioPlaying = true;
+              shouldResumeOnSwitch = true;
+              audioBlockedByPolicy = false;
+              syncPlayerUI();
+            })
+            .catch(() => {
+              playTrackByIndex(activeFilm, true);
+            });
+        } else {
+          playTrackByIndex(activeFilm, true);
+        }
+      }
+
+      function scheduleTrackSwitchPlayback(idx) {
+        if (autoSwitchTimeout) {
+          clearTimeout(autoSwitchTimeout);
+          autoSwitchTimeout = null;
+        }
+        const needAutoStart = isAudioPlaying || shouldResumeOnSwitch || autoplayEnabled;
+        if (playingIdx !== -1 && playingIdx !== idx) {
+          killActiveAudio(true);
+        }
+        syncPlayerUI();
+
+        if (!needAutoStart) return;
+
+        autoSwitchTimeout = setTimeout(() => {
+          autoSwitchTimeout = null;
+          if (activeFilm === idx && !dragging) {
+            playTrackByIndex(idx, false);
+          }
+        }, 120);
+      }
+
+      /* Audio & Volume Event Listeners */
+      dockPlayBtn.addEventListener("click", () => togglePlayPause());
+      watchPreviewBtn.addEventListener("click", () => togglePlayPause());
+
+      topAutoplayBtn.addEventListener("click", () => setAutoplay(!autoplayEnabled));
+      dockAutoBtn.addEventListener("click", () => setAutoplay(!autoplayEnabled));
+
+      unlockAudioBtn.addEventListener("click", () => {
+        audioBlockedByPolicy = false;
+        playTrackByIndex(activeFilm, true);
+      });
+
+      volMuteBtn.addEventListener("click", () => toggleMute());
+
+      volSlider.addEventListener("input", (e) => {
+        setVolumeFromPercent(Number(e.target.value));
+      });
+
+      volSlider.addEventListener("change", (e) => {
+        setVolumeFromPercent(Number(e.target.value));
+      });
+
+      volGroup.addEventListener(
+        "wheel",
+        (e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          const currentPct = isMuted ? 0 : Math.round(volumeLevel * 100);
+          const step = e.deltaY < 0 ? 6 : -6;
+          setVolumeFromPercent(currentPct + step);
+        },
+        { passive: false }
+      );
+
+      let seeking = false;
+      function scrubAudioByClientX(clientX) {
+        if (!currentAudio || !Number.isFinite(currentAudio.duration) || currentAudio.duration <= 0) return;
+        const rect = dockSeekEl.getBoundingClientRect();
+        const ratio = Math.max(0, Math.min(1, (clientX - rect.left) / rect.width));
+        currentAudio.currentTime = ratio * currentAudio.duration;
+        dockSeekFillEl.style.width = ratio * 100 + "%";
+        dockCurTimeEl.textContent = formatSeconds(currentAudio.currentTime);
+      }
+
+      dockSeekEl.addEventListener("pointerdown", (e) => {
+        seeking = true;
+        dockSeekEl.setPointerCapture(e.pointerId);
+        scrubAudioByClientX(e.clientX);
+      });
+
+      dockSeekEl.addEventListener("pointermove", (e) => {
+        if (seeking) scrubAudioByClientX(e.clientX);
+      });
+
+      dockSeekEl.addEventListener("pointerup", () => {
+        seeking = false;
+      });
+
+      updateVolumeUI();
+      updateAutoplayUI();
+      syncPlayerUI();
+
+      /* ---------------------------------------------------------
+         6. AUTHENTIC COVER & PREVIEW LOADER (ITUNES + DEEZER)
+         --------------------------------------------------------- */
+      let jsonpCounter = 0;
+
+      function jsonpFetch(url, timeoutMs = 6500) {
+        return new Promise((resolve) => {
+          const cbName = "__arcJsonp_" + ++jsonpCounter + "_" + Date.now();
+          const script = document.createElement("script");
+          let done = false;
+
+          const cleanup = () => {
+            if (done) return;
+            done = true;
+            delete window[cbName];
+            if (script.parentNode) script.parentNode.removeChild(script);
+          };
+
+          const timer = setTimeout(() => {
+            cleanup();
+            resolve(null);
+          }, timeoutMs);
+
+          window[cbName] = (data) => {
+            clearTimeout(timer);
+            cleanup();
+            resolve(data);
+          };
+
+          const sep = url.includes("?") ? "&" : "?";
+          script.src = url + sep + "callback=" + cbName;
+          script.onerror = () => {
+            clearTimeout(timer);
+            cleanup();
+            resolve(null);
+          };
+          document.head.appendChild(script);
+        });
+      }
+
+      function normalizeStr(str) {
+        return String(str || "")
+          .toLowerCase()
+          .replace(/ё/g, "е")
+          .replace(/[^a-zа-я0-9\s]/gi, " ")
+          .replace(/\s+/g, " ")
+          .trim();
+      }
+
+      function upgradeArtworkUrl(rawUrl) {
+        if (!rawUrl) return "";
+        return rawUrl.replace(/\/\d+x\d+bb\.(jpg|webp|png)/i, "/1000x1000bb.jpg");
+      }
+
+      function applyCoverToDOM(idx, artUrl) {
+        if (!artUrl) return;
+        const tr = TRACKS[idx];
+        if (tr.coverUrl === artUrl) return;
+        tr.coverUrl = artUrl;
+
+        coverImgsByTrack[idx].forEach((img) => {
+          img.onload = () => img.classList.add("loaded");
+          img.src = artUrl;
+        });
+
+        spineImgsByTrack[idx].forEach((img) => {
+          img.onload = () => img.classList.add("loaded");
+          img.src = artUrl;
+        });
+
+        const row = drawerRows[idx];
+        if (row && row.img) {
+          row.img.src = artUrl;
+        }
+
+        if (idx === activeFilm && detailOpen) {
+          posterCoverImg.setAttribute("href", artUrl);
+        }
+      }
+
+      const pendingResolves = new Map();
+
+      async function resolveSingleTrackMedia(idx) {
+        const tr = TRACKS[idx];
+        if (tr.coverUrl && tr.previewUrl) return;
+        if (pendingResolves.has(idx)) return pendingResolves.get(idx);
+
+        const job = (async () => {
+          // Step A: Direct Apple Music Song + Collection Lookup (RU & US)
+          const idsToLookup = [tr.appleSongId, tr.appleCollectionId].filter(Boolean).join(",");
+          if (idsToLookup) {
+            for (const country of ["ru", "us"]) {
+              const data = await jsonpFetch(`https://itunes.apple.com/lookup?id=${idsToLookup}&entity=song&country=${country}`);
+              if (data && Array.isArray(data.results)) {
+                const colItem = data.results.find((r) => r.wrapperType === "collection" && r.artworkUrl100);
+                const songItem =
+                  data.results.find((r) => r.wrapperType === "track" && r.trackId === tr.appleSongId) ||
+                  data.results.find(
+                    (r) =>
+                      r.wrapperType === "track" &&
+                      normalizeStr(r.trackName).includes(normalizeStr(tr.matchTitle))
+                  );
+
+                if (colItem && colItem.artworkUrl100 && !tr.coverUrl) {
+                  applyCoverToDOM(idx, upgradeArtworkUrl(colItem.artworkUrl100));
+                }
+                if (songItem) {
+                  if (songItem.artworkUrl100 && !tr.coverUrl) {
+                    applyCoverToDOM(idx, upgradeArtworkUrl(songItem.artworkUrl100));
+                  }
+                  if (songItem.previewUrl && !tr.previewUrl) {
+                    tr.previewUrl = songItem.previewUrl;
+                  }
+                }
+              }
+              if (tr.coverUrl && tr.previewUrl) break;
+            }
+          }
+
+          // Step B: Strict iTunes Search Fallback
+          if (!tr.coverUrl || !tr.previewUrl) {
+            const q = encodeURIComponent(tr.searchQuery);
+            for (const country of ["ru", "us"]) {
+              const sData = await jsonpFetch(`https://itunes.apple.com/search?term=${q}&media=music&entity=song&limit=10&country=${country}`);
+              if (sData && Array.isArray(sData.results)) {
+                const normArtist = normalizeStr(tr.matchArtist);
+                const normTitle = normalizeStr(tr.matchTitle);
+                const best = sData.results.find((r) => {
+                  const a = normalizeStr(r.artistName);
+                  const t = normalizeStr(r.trackName);
+                  const isJunk = /\b(karaoke|cover|tribute|slowed|sped up|remix|instrumental)\b/.test(t + " " + a);
+                  return !isJunk && a.includes(normArtist) && t.includes(normTitle);
+                });
+                if (best) {
+                  if (best.artworkUrl100 && !tr.coverUrl) {
+                    applyCoverToDOM(idx, upgradeArtworkUrl(best.artworkUrl100));
+                  }
+                  if (best.previewUrl && !tr.previewUrl) {
+                    tr.previewUrl = best.previewUrl;
+                  }
+                }
+              }
+              if (tr.coverUrl && tr.previewUrl) break;
+            }
+          }
+
+          // Step C: Strict Deezer JSONP Fallback
+          if (!tr.coverUrl || !tr.previewUrl) {
+            const dq = encodeURIComponent(tr.searchQuery);
+            const dz = await jsonpFetch(`https://api.deezer.com/search?q=${dq}&limit=10&output=jsonp`);
+            if (dz && Array.isArray(dz.data)) {
+              const normArtist = normalizeStr(tr.matchArtist);
+              const normTitle = normalizeStr(tr.matchTitle);
+              const bestDz = dz.data.find((r) => {
+                const a = normalizeStr(r.artist && r.artist.name);
+                const t = normalizeStr(r.title);
+                const isJunk = /\b(karaoke|cover|tribute|slowed|sped up|remix|instrumental)\b/.test(t + " " + a);
+                return !isJunk && a.includes(normArtist) && t.includes(normTitle);
+              });
+              if (bestDz) {
+                const dzCover = bestDz.album && (bestDz.album.cover_xl || bestDz.album.cover_big);
+                if (dzCover && !tr.coverUrl) {
+                  applyCoverToDOM(idx, dzCover);
+                }
+                if (bestDz.preview && !tr.previewUrl) {
+                  tr.previewUrl = bestDz.preview;
+                }
+              }
+            }
+          }
+        })();
+
+        pendingResolves.set(idx, job);
+        await job;
+        pendingResolves.delete(idx);
+      }
+
+      async function preloadAllMedia() {
+        await resolveSingleTrackMedia(INITIAL_INDEX);
+        for (let offset = 1; offset < N; offset++) {
+          const right = (INITIAL_INDEX + offset) % N;
+          const left = (INITIAL_INDEX - offset + N) % N;
+          resolveSingleTrackMedia(right);
+          if (left !== right) resolveSingleTrackMedia(left);
+        }
+      }
+
+      /* ---------------------------------------------------------
+         7. CAPTION MASK SLIDE & DETAIL SHEET INK REVEAL
+         --------------------------------------------------------- */
+      function swapMaskText(container, oldEl, newText, className, dir) {
+        if (!container) return oldEl;
+        const nextSpan = document.createElement("span");
+        nextSpan.className = className;
+        nextSpan.textContent = newText;
+        container.appendChild(nextSpan);
+
+        if (prefersReducedMotion || !oldEl) {
+          if (oldEl && oldEl.parentNode === container) container.removeChild(oldEl);
+          return nextSpan;
+        }
+
+        const sign = dir >= 0 ? 1 : -1;
+        nextSpan.animate(
+          [
+            { transform: `translateY(${sign * 105}%)` },
+            { transform: "translateY(0%)" }
+          ],
+          { duration: 650, easing: "cubic-bezier(.2,.8,.2,1)", fill: "both" }
+        );
+
+        const prevAnims = oldEl.getAnimations();
+        prevAnims.forEach((a) => a.cancel());
+        const outAnim = oldEl.animate(
+          [
+            { transform: "translateY(0%)" },
+            { transform: `translateY(${-sign * 105}%)` }
+          ],
+          { duration: 650, easing: "cubic-bezier(.2,.8,.2,1)", fill: "both" }
+        );
+        outAnim.onfinish = () => {
+          if (oldEl.parentNode === container) container.removeChild(oldEl);
+        };
+
+        return nextSpan;
+      }
+
+      function syncCaptionAndDetail(idx, dir) {
+        const tr = TRACKS[idx];
+        const volStr = String(idx + 1).padStart(2, "0");
+
+        capTitleEl = swapMaskText(capTitleMask, capTitleEl, tr.title, "cap-title", dir);
+        capSubEl = swapMaskText(capSubMask, capSubEl, `${tr.artist} / ${tr.album}`, "cap-sub", dir);
+        capMetaEl = swapMaskText(capMetaMask, capMetaEl, `${tr.year} — ${tr.genre}`, "cap-meta", dir);
+
+        // Update Detail Sheet & SVG Poster
+        document.getElementById("dSub").textContent = `${tr.artist} / ${tr.album}`;
+        document.getElementById("dTitle").textContent = tr.title;
+        document.getElementById("dMeta").textContent = `${tr.year} / ${tr.genre} / ${tr.duration}`;
+        document.getElementById("dSynopsis").textContent = tr.synopsis;
+        document.getElementById("dCredit").textContent = tr.credit;
+        appleMusicLink.href = tr.appleUrl;
+
+        svgKickerEl.textContent = `АРХИВ · ${tr.year} · ТОМ № ${volStr}`;
+        svgArtistEl.textContent = tr.artist.toUpperCase();
+
+        // Split long title neatly across 2 SVG lines if needed
+        const words = tr.title.split(" ");
+        if (tr.title.length > 15 && words.length > 1) {
+          const mid = Math.ceil(words.length / 2);
+          svgTitle1El.textContent = words.slice(0, mid).join(" ");
+          svgTitle2El.textContent = words.slice(mid).join(" ");
+        } else {
+          svgTitle1El.textContent = tr.title;
+          svgTitle2El.textContent = "";
+        }
+
+        posterCoverImg.setAttribute("href", tr.coverUrl || "");
+        renderDrawerState();
+      }
+
+      const INK_SPECS = [
+        { cx: 150, cy: 330, delay: 0 },
+        { cx: 340, cy: 600, delay: 120 },
+        { cx: 250, cy: 120, delay: 220 },
+        { cx: 90, cy: 760, delay: 300 },
+        { cx: 400, cy: 250, delay: 360 },
+        { cx: 260, cy: 860, delay: 420 },
+        { cx: 230, cy: 470, delay: 180 }
+      ];
+
+      function getActiveCoverRect() {
+        const centerV = Math.round(s);
+        const node = tapeNodes.find((t) => t.v === centerV) || tapeNodes[INITIAL_INDEX + N];
+        const rect = node.cv.getBoundingClientRect();
+        if (rect.width < 10 || rect.height < 10) {
+          const W = window.innerWidth;
+          const H = window.innerHeight;
+          return {
+            top: H * 0.25,
+            right: W * 0.42,
+            bottom: H * 0.25,
+            left: W * 0.42
+          };
+        }
+        return {
+          top: Math.max(0, rect.top),
+          right: Math.max(0, window.innerWidth - rect.right),
+          bottom: Math.max(0, window.innerHeight - rect.bottom),
+          left: Math.max(0, rect.left)
+        };
+      }
+
+      function openDetail() {
+        if (detailOpen) return;
+        detailOpen = true;
+        T = Math.round(s);
+        s = T;
+        renderShelfFrame(0.016);
+
+        syncCaptionAndDetail(activeFilm, 1);
+        resolveSingleTrackMedia(activeFilm);
+
+        detailMaskTimers.forEach((id) => clearTimeout(id));
+        detailMaskTimers = [];
+        if (detailAnim) detailAnim.cancel();
+        if (detailCloseAnim) detailCloseAnim.cancel();
+
+        inkCircles.forEach((c, idx) => {
+          c.setAttribute("cx", String(INK_SPECS[idx].cx));
+          c.setAttribute("cy", String(INK_SPECS[idx].cy));
+          c.setAttribute("r", prefersReducedMotion ? "720" : "0");
+        });
+
+        detailSheet.classList.add("is-open");
+        detailSheet.setAttribute("aria-hidden", "false");
+
+        if (prefersReducedMotion) {
+          detailSheet.style.clipPath = "inset(0 round 0)";
+          return;
+        }
+
+        const r = getActiveCoverRect();
+        detailAnim = detailSheet.animate(
+          [
+            { clipPath: `inset(${r.top}px ${r.right}px ${r.bottom}px ${r.left}px round 4px)` },
+            { clipPath: "inset(0px 0px 0px 0px round 0px)" }
+          ],
+          {
+            duration: 1050,
+            easing: "cubic-bezier(.76,0,.18,1)",
+            fill: "both"
+          }
+        );
+
+        const dLines = Array.from(detailSheet.querySelectorAll(".d-line"));
+        dLines.forEach((line, i) => {
+          line.getAnimations().forEach((a) => a.cancel());
+          line.animate(
+            [
+              { transform: "translateY(110%)" },
+              { transform: "translateY(0%)" }
+            ],
+            {
+              duration: 900,
+              delay: 620 + i * 75,
+              easing: "cubic-bezier(.2,.8,.2,1)",
+              fill: "both"
+            }
+          );
+        });
+
+        INK_SPECS.forEach((spec, idx) => {
+          const circle = inkCircles[idx];
+          const tId = setTimeout(() => {
+            const start = performance.now();
+            const dur = 1250;
+            function stepInk(now) {
+              if (!detailOpen) return;
+              const p = Math.min(1, (now - start) / dur);
+              const eased = 1 - Math.pow(1 - p, 3);
+              circle.setAttribute("r", (eased * 720).toFixed(1));
+              if (p < 1) requestAnimationFrame(stepInk);
+            }
+            requestAnimationFrame(stepInk);
+          }, 520 + spec.delay);
+          detailMaskTimers.push(tId);
+        });
+      }
+
+      function closeDetail(instant = false) {
+        if (!detailOpen) return;
+        detailMaskTimers.forEach((id) => clearTimeout(id));
+        detailMaskTimers = [];
+
+        if (instant || prefersReducedMotion) {
+          detailOpen = false;
+          detailSheet.classList.remove("is-open");
+          detailSheet.setAttribute("aria-hidden", "true");
+          if (detailAnim) detailAnim.cancel();
+          return;
+        }
+
+        const r = getActiveCoverRect();
+        if (detailAnim) detailAnim.cancel();
+        detailCloseAnim = detailSheet.animate(
+          [
+            { clipPath: "inset(0px 0px 0px 0px round 0px)" },
+            { clipPath: `inset(${r.top}px ${r.right}px ${r.bottom}px ${r.left}px round 4px)` }
+          ],
+          {
+            duration: 850,
+            easing: "cubic-bezier(.76,0,.18,1)",
+            fill: "both"
+          }
+        );
+        detailCloseAnim.onfinish = () => {
+          detailOpen = false;
+          detailSheet.classList.remove("is-open");
+          detailSheet.setAttribute("aria-hidden", "true");
+          if (detailCloseAnim) detailCloseAnim.cancel();
+        };
+      }
+
+      document.getElementById("detailCloseBtn").addEventListener("click", () => closeDetail(false));
+
+      /* ---------------------------------------------------------
+         8. CURVED 3D SHELF GEOMETRY & SPRING PHYSICS
+         --------------------------------------------------------- */
+      const P = 1400; // Perspective
+      let measuredH = 380;
+      let ws = 64;
+      let d = 200;
+      let gap = 13;
+      let U = 494;
+      let XS = new Float64Array(1000);
+
+      const probeEl = document.createElement("div");
+      probeEl.style.cssText = "position:fixed;left:-9999px;top:0;height:var(--H);width:1px;pointer-events:none;";
+      document.body.appendChild(probeEl);
+
+      function recalcMetrics() {
+        const h = probeEl.getBoundingClientRect().height || window.innerHeight * 0.45;
+        measuredH = h;
+        ws = h * (142 / 840);
+        d = h * (474 / 900);
+        gap = h * 0.035;
+        U = window.innerWidth < 768 ? h * 1.05 : h * 1.3;
+
+        tapeNodes.forEach(({ sp, cv }) => {
+          sp.style.width = ws + "px";
+          sp.style.left = -ws * 0.5 + "px";
+          cv.style.width = d + "px";
+          cv.style.left = -d * 0.5 + "px";
+        });
+
+        const maxU = Math.ceil(U * 3);
+        const steps = Math.ceil(maxU / 2) + 2;
+        XS = new Float64Array(steps);
+        let acc = 0;
+        for (let idx = 0; idx < steps; idx++) {
+          XS[idx] = acc;
+          const uVal = idx * 2;
+          acc += 2 / (1 + Math.pow(uVal / U, 1.6));
+        }
+      }
+
+      function smoothstep(x) {
+        const t = Math.max(0, Math.min(1, x));
+        return t * t * (3 - 2 * t);
+      }
+
+      function B(r) {
+        if (Math.abs(r) < 1) {
+          return (r + Math.sin(Math.PI * r) / Math.PI) * 0.5;
+        }
+        return r >= 1 ? 0.5 : -0.5;
+      }
+
+      function F(r) {
+        return r * (ws + gap) + (d - ws + 1.4 * gap) * B(r);
+      }
+
+      function scl(u) {
+        return 1 / (1 + Math.pow(Math.abs(u) / U, 1.6));
+      }
+
+      function xsc(u) {
+        const absU = Math.abs(u);
+        const fIdx = absU * 0.5;
+        const i0 = Math.min(XS.length - 2, Math.floor(fIdx));
+        const frac = fIdx - i0;
+        const val = XS[i0] + (XS[i0 + 1] - XS[i0]) * frac;
+        return (u < 0 ? -1 : 1) * val;
+      }
+
+      let currentDotYear = TRACKS[INITIAL_INDEX].year;
+
+      function renderShelfFrame(dt) {
+        const kSpring = prefersReducedMotion ? 100 : dragging ? 18 : 5.2;
+        const alpha = prefersReducedMotion ? 1 : 1 - Math.exp(-kSpring * dt);
+        s += (T - s) * alpha;
+
+        // Loop wrap normalization
+        if (Math.abs(s) > N * 4) {
+          const shift = Math.round(s / N) * N;
+          s -= shift;
+          T -= shift;
+        }
+
+        const newFilm = (((Math.round(s) % N) + N) % N);
+        if (newFilm !== activeFilm) {
+          const dir = T - s >= 0 ? 1 : -1;
+          activeFilm = newFilm;
+          syncCaptionAndDetail(activeFilm, dir);
+          scheduleTrackSwitchPlayback(activeFilm);
+        }
+
+        // Pointer tilt on settled cover
+        const W = window.innerWidth;
+        const H = window.innerHeight;
+        const cyRatio = W < 768 ? 0.41 : 0.395;
+        const shelfCy = H * cyRatio;
+        const settled = Math.abs(T - s) < 0.3 && !detailOpen;
+        const onCover =
+          settled &&
+          Math.abs(mx - W * 0.5) < 0.55 * d &&
+          Math.abs(my - shelfCy) < 0.55 * measuredH;
+
+        let targetTiltY = ((mx - W * 0.5) / W) * 4;
+        let targetTiltX = 0;
+        if (onCover) {
+          targetTiltY = ((mx - W * 0.5) / (0.55 * d)) * 8;
+          targetTiltX = -((my - shelfCy) / (measuredH * 0.5)) * 5;
+        }
+        const tiltAlpha = prefersReducedMotion ? 1 : 1 - Math.exp(-7 * dt);
+        tiltX += (targetTiltX - tiltX) * tiltAlpha;
+        tiltY += (targetTiltY - tiltY) * tiltAlpha;
+
+        // Update each of the 36 3D books
+        const liftAlpha = prefersReducedMotion ? 1 : 1 - Math.exp(-12 * dt);
+        for (let idx = 0; idx < TOTAL_VIRTUAL; idx++) {
+          const node = tapeNodes[idx];
+          let r = (((node.v - s) % TOTAL_VIRTUAL) + TOTAL_VIRTUAL) % TOTAL_VIRTUAL;
+          if (r >= TOTAL_VIRTUAL * 0.5) r -= TOTAL_VIRTUAL;
+
+          const u = F(r);
+          if (Math.abs(u) > U * 1.95) {
+            node.el.style.display = "none";
+            continue;
+          }
+          node.el.style.display = "block";
+
+          const targetLift = hoveredVirtual === node.v && Math.abs(r) > 0.5 ? 1 : 0;
+          lifts[idx] += (targetLift - lifts[idx]) * liftAlpha;
+
+          const o = smoothstep(Math.max(0, 1 - Math.abs(r)));
+          const sc = scl(u);
+          const k = 1 / sc;
+
+          const z = P * (1 - k) + o * measuredH * 0.1;
+          const x = xsc(u) * k;
+          const y = (measuredH * 0.5 * (1 - sc) * 0.42 + o * measuredH * 0.012 - lifts[idx] * measuredH * 0.05) * k;
+
+          const signU = u < 0 ? -1 : u > 0 ? 1 : 0;
+          const rotY = signU * Math.min(1, Math.abs(u) / U) * 26 * (1 - o) - 90 * o + tiltY * o;
+          const rotX = tiltX * o;
+
+          node.el.style.transform = `translate3d(${x.toFixed(2)}px, ${y.toFixed(2)}px, ${z.toFixed(2)}px) rotateX(${rotX.toFixed(2)}deg) rotateY(${rotY.toFixed(2)}deg)`;
+          node.el.style.zIndex = String(Math.round(3000 + z));
+
+          node.sp.style.transform = `translateZ(${(d * 0.5).toFixed(2)}px)`;
+          node.cv.style.transform = `rotateY(90deg) translateZ(${(ws * 0.5).toFixed(2)}px)`;
+
+          const spShade = Math.min(0.6, o * 0.55 + (1 - sc) * 0.32);
+          const cvShade = (1 - o) * 0.82;
+          node.sp.style.setProperty("--shade", spShade.toFixed(3));
+          node.cv.style.setProperty("--shade", cvShade.toFixed(3));
+        }
+
+        // Timeline dot interpolation
+        const fl = Math.floor(s);
+        const frac = s - fl;
+        const i0 = (((fl % N) + N) % N);
+        const i1 = (((fl + 1) % N) + N) % N;
+        const y0 = TRACKS[i0].year;
+        const y1 = TRACKS[i1].year;
+
+        let targetYear;
+        if (Math.abs(y1 - y0) > 5) {
+          targetYear = frac < 0.5 ? y0 : y1;
+        } else {
+          targetYear = y0 + (y1 - y0) * frac;
+        }
+
+        if (Math.abs(targetYear - currentDotYear) > 5 || prefersReducedMotion) {
+          currentDotYear = targetYear;
+        } else {
+          currentDotYear += (targetYear - currentDotYear) * (1 - Math.exp(-14 * dt));
+        }
+        const dotPct = Math.max(0, Math.min(100, ((currentDotYear - MIN_YEAR) / YEAR_SPAN) * 100));
+        tlDotEl.style.left = dotPct.toFixed(2) + "%";
+
+        // Smooth custom cursor follow
+        const curAlpha = 1 - Math.exp(-16 * dt);
+        cx += (mx - cx) * curAlpha;
+        cy += (my - cy) * curAlpha;
+        cursorEl.style.transform = `translate3d(${cx.toFixed(1)}px, ${cy.toFixed(1)}px, 0)`;
+
+        // Update cursor state
+        updateCursorClass(onCover);
+      }
+
+      function safeClosest(node, selector) {
+        if (!node) return null;
+        if (typeof node.closest === "function") return node.closest(selector);
+        if (node.parentElement && typeof node.parentElement.closest === "function") {
+          return node.parentElement.closest(selector);
+        }
+        return null;
+      }
+
+      function updateCursorClass(onCover) {
+        const target = document.elementFromPoint(mx, my);
+        const overBtn = Boolean(safeClosest(target, "button, a, input, .timeline, .dock-seek"));
+        const overTape = safeClosest(target, ".tape");
+
+        cursorEl.classList.remove("open", "spine", "btn");
+        if (overBtn) {
+          cursorEl.classList.add("btn");
+        } else if (onCover) {
+          cursorEl.classList.add("open");
+        } else if (overTape && !detailOpen) {
+          cursorEl.classList.add("spine");
+        }
+      }
+
+      /* ---------------------------------------------------------
+         9. USER INTERACTIONS (DRAG, WHEEL, KEYS, CLICKS, DRAWER)
+         --------------------------------------------------------- */
+      function stepShelf(delta) {
+        if (detailOpen) return;
+        T = Math.round(T) + delta;
+      }
+
+      function jumpToFilmIndex(targetIdx) {
+        const curMod = (((Math.round(T) % N) + N) % N);
+        let diff = targetIdx - curMod;
+        if (diff > N / 2) diff -= N;
+        if (diff < -N / 2) diff += N;
+        T = Math.round(T) + diff;
+      }
+
+      document.getElementById("prevBtn").addEventListener("click", () => stepShelf(-1));
+      document.getElementById("nextBtn").addEventListener("click", () => stepShelf(1));
+
+      stageEl.addEventListener("pointerover", (e) => {
+        const t = safeClosest(e.target, ".tape");
+        hoveredVirtual = t ? Number(t.dataset.v) : -1;
+      });
+
+      stageEl.addEventListener("pointerout", (e) => {
+        const t = safeClosest(e.target, ".tape");
+        if (t && Number(t.dataset.v) === hoveredVirtual) {
+          hoveredVirtual = -1;
+        }
+      });
+
+      stageEl.addEventListener("click", (e) => {
+        if (dragMoved || detailOpen) return;
+        const t = safeClosest(e.target, ".tape");
+        if (!t) return;
+        const v = Number(t.dataset.v);
+        let r = (((v - s) % TOTAL_VIRTUAL) + TOTAL_VIRTUAL) % TOTAL_VIRTUAL;
+        if (r >= TOTAL_VIRTUAL * 0.5) r -= TOTAL_VIRTUAL;
+
+        if (Math.abs(r) < 0.45) {
+          openDetail();
+        } else {
+          T = Math.round(T + r);
+        }
+      });
+
+      // Drag / Swipe on Shelf
+      shelfWrapEl.addEventListener("pointerdown", (e) => {
+        if (detailOpen) return;
+        dragging = true;
+        dragMoved = false;
+        dragStartX = e.clientX;
+        dragT0 = T;
+      });
+
+      window.addEventListener("pointermove", (e) => {
+        mx = e.clientX;
+        my = e.clientY;
+        if (!dragging) return;
+        const dx = e.clientX - dragStartX;
+        if (Math.abs(dx) > 5) dragMoved = true;
+        if (dragMoved) {
+          T = dragT0 - dx / (ws + gap);
+        }
+      });
+
+      window.addEventListener("pointerup", () => {
+        if (!dragging) return;
+        dragging = false;
+        if (dragMoved) {
+          T = Math.round(T);
+          setTimeout(() => {
+            dragMoved = false;
+          }, 40);
+        }
+      });
+
+      // Wheel Scroll
+      window.addEventListener(
+        "wheel",
+        (e) => {
+          if (detailOpen || drawerEl.classList.contains("open")) return;
+          if (safeClosest(e.target, "#volGroup")) return;
+          e.preventDefault();
+          const delta = Math.abs(e.deltaY) >= Math.abs(e.deltaX) ? e.deltaY : e.deltaX;
+          T += (delta / (ws + gap)) * 0.5;
+          clearTimeout(wheelTimeout);
+          wheelTimeout = setTimeout(() => {
+            T = Math.round(T);
+          }, 160);
+        },
+        { passive: false }
+      );
+
+      // Timeline Click
+      timelineEl.addEventListener("click", (e) => {
+        if (detailOpen) return;
+        const rect = timelineEl.getBoundingClientRect();
+        const ratio = Math.max(0, Math.min(1, (e.clientX - rect.left) / rect.width));
+        const clickedYear = MIN_YEAR + ratio * YEAR_SPAN;
+
+        let bestIdx = 0;
+        let bestDist = Infinity;
+        TRACKS.forEach((tr, idx) => {
+          const dist = Math.abs(tr.year - clickedYear);
+          if (dist < bestDist) {
+            bestDist = dist;
+            bestIdx = idx;
+          }
+        });
+        jumpToFilmIndex(bestIdx);
+      });
+
+      // Keyboard Shortcuts
+      window.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") {
+          if (infoModal.classList.contains("open")) {
+            infoModal.classList.remove("open");
+            return;
+          }
+          if (drawerEl.classList.contains("open")) {
+            closeDrawer();
+            return;
+          }
+          if (detailOpen) {
+            closeDetail(false);
+            return;
+          }
+        }
+        if (e.code === "Space") {
+          e.preventDefault();
+          togglePlayPause();
+          return;
+        }
+        if (e.key === "m" || e.key === "M" || e.key === "ь" || e.key === "Ь") {
+          toggleMute();
+          return;
+        }
+        if (e.key === "ArrowUp") {
+          e.preventDefault();
+          const currentPct = isMuted ? 0 : Math.round(volumeLevel * 100);
+          setVolumeFromPercent(currentPct + 10);
+          return;
+        }
+        if (e.key === "ArrowDown") {
+          e.preventDefault();
+          const currentPct = isMuted ? 0 : Math.round(volumeLevel * 100);
+          setVolumeFromPercent(currentPct - 10);
+          return;
+        }
+        if (detailOpen || drawerEl.classList.contains("open")) return;
+        if (e.key === "ArrowLeft") stepShelf(-1);
+        if (e.key === "ArrowRight") stepShelf(1);
+        if (e.key === "Enter") openDetail();
+      });
+
+      // Drawer & Info Modal Controls
+      function openDrawer() {
+        renderDrawerState();
+        drawerEl.classList.add("open");
+        drawerEl.setAttribute("aria-hidden", "false");
+        drawerBackdrop.classList.add("open");
+      }
+
+      function closeDrawer() {
+        drawerEl.classList.remove("open");
+        drawerEl.setAttribute("aria-hidden", "true");
+        drawerBackdrop.classList.remove("open");
+      }
+
+      document.getElementById("burgerBtn").addEventListener("click", openDrawer);
+      document.querySelectorAll("[data-open-drawer]").forEach((b) => b.addEventListener("click", openDrawer));
+      document.getElementById("drawerCloseBtn").addEventListener("click", closeDrawer);
+      drawerBackdrop.addEventListener("click", closeDrawer);
+
+      const infoModal = document.getElementById("infoModal");
+      document.querySelectorAll("[data-open-info]").forEach((b) => {
+        b.addEventListener("click", () => {
+          infoModal.classList.add("open");
+          infoModal.setAttribute("aria-hidden", "false");
+        });
+      });
+      document.getElementById("infoCloseBtn").addEventListener("click", () => {
+        infoModal.classList.remove("open");
+        infoModal.setAttribute("aria-hidden", "true");
+      });
+
+      document.getElementById("brandHome").addEventListener("click", (e) => {
+        e.preventDefault();
+        if (detailOpen) closeDetail(false);
+        closeDrawer();
+        jumpToFilmIndex(INITIAL_INDEX);
+      });
+
+      /* ---------------------------------------------------------
+         10. INITIALIZATION & SINGLE REQUESTANIMATIONFRAME LOOP
+         --------------------------------------------------------- */
+      recalcMetrics();
+      window.addEventListener("resize", recalcMetrics);
+
+      // Sync initial UI to Bandana (index 5) without sliding
+      const initTr = TRACKS[INITIAL_INDEX];
+      capTitleEl.textContent = initTr.title;
+      capSubEl.textContent = `${initTr.artist} / ${initTr.album}`;
+      capMetaEl.textContent = `${initTr.year} — ${initTr.genre}`;
+      syncCaptionAndDetail(INITIAL_INDEX, 1);
+
+      // Start background loading of real album covers & audio previews
+      preloadAllMedia();
+
+      let lastTime = performance.now();
+      function loop(now) {
+        const dt = Math.min(0.05, (now - lastTime) * 0.001);
+        lastTime = now;
+        renderShelfFrame(dt);
+        requestAnimationFrame(loop);
+      }
+
+      window.addEventListener("load", () => {
+        recalcMetrics();
+        lastTime = performance.now();
+        requestAnimationFrame(loop);
+      });
+    })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,8 @@
+{
+  "name": "Sona",
+  "description": "Минималистичный настольный аудиоплеер с DSP-плагинами, эквалайзером под наушники, облачной синхронизацией, караоке с переводом и ИИ-рекомендациями.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

@@ -1,0 +1,624 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  --sona-accent: #191e12;
+  --sona-accent-text: #191e12;
+  --sona-accent-soft: rgba(25, 30, 18, 0.14);
+  --sona-accent-fg: #f3f1ec;
+  --sona-radius: 26px;
+  --sona-radius-sm: 16px;
+  --font-display: "Cormorant Garamond", Georgia, serif;
+  --font-sans: "Plus Jakarta Sans", "Inter Tight", system-ui, -apple-system, sans-serif;
+  --font-serif: "Cormorant Garamond", Georgia, serif;
+  --font-mono: "Space Mono", "IBM Plex Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+.dark {
+  --sona-accent: #ffffff;
+  --sona-accent-text: #ffffff;
+  --sona-accent-soft: rgba(255, 255, 255, 0.16);
+  --sona-accent-fg: #000000;
+}
+
+html,
+body {
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+}
+
+.font-display,
+h1 {
+  font-family: var(--font-display);
+  letter-spacing: -0.01em;
+}
+
+.font-editorial {
+  font-family: var(--font-serif);
+}
+
+.sona-lbl {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.font-mono-tabular {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+@keyframes slowSpin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-reticle {
+  animation: slowSpin 24s linear infinite;
+}
+
+/* Liquid Glass optical panels harmonized with Topographic Contour Surface (Editorial Stone-Paper Light & Obsidian Night-Survey Dark) */
+.glass-surface {
+  position: relative;
+  background:
+    radial-gradient(120% 70% at 14% 0%, rgba(255, 255, 255, 0.66) 0%, rgba(255, 255, 255, 0.08) 48%, transparent 72%),
+    radial-gradient(90% 60% at 88% 100%, rgba(227, 223, 212, 0.34) 0%, transparent 65%),
+    linear-gradient(
+      155deg,
+      rgba(243, 241, 236, 0.66) 0%,
+      rgba(243, 241, 236, 0.42) 48%,
+      rgba(255, 254, 250, 0.56) 100%
+    );
+  backdrop-filter: blur(14px) saturate(135%) contrast(1.03);
+  -webkit-backdrop-filter: blur(14px) saturate(135%) contrast(1.03);
+  border: 1px solid rgba(25, 30, 18, 0.14);
+  box-shadow:
+    inset 0 2px 1.5px rgba(255, 255, 255, 0.92),
+    inset 0 -2px 5px rgba(25, 30, 18, 0.06),
+    inset 2px 0 3px rgba(255, 255, 255, 0.62),
+    0 20px 48px -16px rgba(25, 30, 18, 0.14),
+    0 3px 10px rgba(25, 30, 18, 0.05);
+}
+
+.dark .glass-surface {
+  background: #0a0a0a;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  box-shadow: 0 18px 40px -16px rgba(0, 0, 0, 0.9);
+}
+
+.glass-elevated {
+  position: relative;
+  background:
+    radial-gradient(115% 75% at 12% 0%, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0.12) 50%, transparent 74%),
+    linear-gradient(
+      155deg,
+      rgba(243, 241, 236, 0.78) 0%,
+      rgba(243, 241, 236, 0.56) 52%,
+      rgba(255, 254, 250, 0.72) 100%
+    );
+  backdrop-filter: blur(18px) saturate(140%) contrast(1.04);
+  -webkit-backdrop-filter: blur(18px) saturate(140%) contrast(1.04);
+  border: 1px solid rgba(25, 30, 18, 0.15);
+  box-shadow:
+    inset 0 2px 1.5px rgba(255, 255, 255, 0.96),
+    inset 0 -2px 5px rgba(25, 30, 18, 0.06),
+    inset 1.5px 0 2px rgba(255, 255, 255, 0.75),
+    0 24px 54px -14px rgba(25, 30, 18, 0.15);
+}
+
+.dark .glass-elevated {
+  background: #0e0e0e;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 20px 48px -14px rgba(0, 0, 0, 0.92);
+}
+
+/* High-legibility floating Liquid Glass popovers & drawers */
+.glass-popover {
+  background:
+    radial-gradient(110% 55% at 15% 0%, rgba(255, 255, 255, 0.94) 0%, transparent 65%),
+    linear-gradient(
+      150deg,
+      rgba(246, 244, 239, 0.94) 0%,
+      rgba(240, 237, 230, 0.9) 55%,
+      rgba(246, 244, 239, 0.94) 100%
+    );
+  backdrop-filter: blur(24px) saturate(140%) contrast(1.03);
+  -webkit-backdrop-filter: blur(24px) saturate(140%) contrast(1.03);
+  border: 1px solid rgba(25, 30, 18, 0.16);
+  box-shadow:
+    inset 0 2px 1.5px rgba(255, 255, 255, 0.98),
+    inset 0 -1.5px 4px rgba(25, 30, 18, 0.06),
+    0 24px 52px -12px rgba(25, 30, 18, 0.22);
+}
+
+.dark .glass-popover {
+  background: #101010;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  box-shadow: 0 24px 56px -12px rgba(0, 0, 0, 0.96);
+}
+
+.glass-subtle {
+  background:
+    radial-gradient(100% 60% at 12% 0%, rgba(255, 255, 255, 0.56) 0%, transparent 65%),
+    linear-gradient(
+      150deg,
+      rgba(243, 241, 236, 0.52) 0%,
+      rgba(232, 229, 220, 0.28) 100%
+    );
+  backdrop-filter: blur(12px) saturate(130%);
+  -webkit-backdrop-filter: blur(12px) saturate(130%);
+  border: 1px solid rgba(25, 30, 18, 0.12);
+  box-shadow:
+    inset 0 1.5px 1px rgba(255, 255, 255, 0.88),
+    inset 0 -1px 2px rgba(25, 30, 18, 0.05);
+}
+
+.dark .glass-subtle {
+  background: #111111;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  box-shadow: none;
+}
+
+/* Liquid Glass tables & floating lens plaques */
+.glass-table {
+  background:
+    radial-gradient(110% 55% at 12% 0%, rgba(255, 255, 255, 0.54) 0%, transparent 65%),
+    linear-gradient(
+      155deg,
+      rgba(243, 241, 236, 0.56) 0%,
+      rgba(243, 241, 236, 0.36) 52%,
+      rgba(255, 254, 250, 0.48) 100%
+    );
+  backdrop-filter: blur(14px) saturate(135%) contrast(1.03);
+  -webkit-backdrop-filter: blur(14px) saturate(135%) contrast(1.03);
+  border: 1px solid rgba(25, 30, 18, 0.14);
+  box-shadow:
+    inset 0 2px 1px rgba(255, 255, 255, 0.9),
+    inset 0 -2px 4px rgba(25, 30, 18, 0.05),
+    0 20px 44px -14px rgba(25, 30, 18, 0.12);
+}
+
+.dark .glass-table {
+  background: #0a0a0a;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 18px 40px -16px rgba(0, 0, 0, 0.88);
+}
+
+.glass-table-head {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.52), rgba(243, 241, 236, 0.32));
+  border: 1px solid rgba(25, 30, 18, 0.12);
+  box-shadow: inset 0 1.5px 0 rgba(255, 255, 255, 0.9);
+}
+
+.dark .glass-table-head {
+  background: #121212;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: none;
+}
+
+.glass-table-row {
+  background:
+    radial-gradient(90% 80% at 8% 0%, rgba(255, 255, 255, 0.46) 0%, transparent 60%),
+    linear-gradient(135deg, rgba(255, 254, 250, 0.48) 0%, rgba(243, 241, 236, 0.26) 100%);
+  border: 1px solid rgba(25, 30, 18, 0.1);
+  box-shadow:
+    inset 0 1.5px 0 rgba(255, 255, 255, 0.85),
+    inset 0 -1px 2px rgba(25, 30, 18, 0.04);
+  transition: background-color 180ms ease, border-color 180ms ease, box-shadow 180ms ease, transform 180ms ease;
+}
+
+.glass-table-row:hover {
+  background:
+    radial-gradient(95% 90% at 10% 0%, rgba(255, 255, 255, 0.8) 0%, transparent 65%),
+    linear-gradient(135deg, rgba(255, 254, 250, 0.72) 0%, rgba(243, 241, 236, 0.5) 100%);
+  border-color: rgba(25, 30, 18, 0.22);
+  box-shadow:
+    inset 0 1.5px 1px rgba(255, 255, 255, 0.96),
+    0 8px 20px -6px rgba(25, 30, 18, 0.12);
+}
+
+.dark .glass-table-row {
+  background: #0f0f0f;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: none;
+}
+
+.dark .glass-table-row:hover {
+  background: #181818;
+  border-color: rgba(255, 255, 255, 0.24);
+  box-shadow: none;
+}
+
+.glass-table-row-active {
+  background:
+    radial-gradient(95% 90% at 12% 0%, rgba(255, 255, 255, 0.92) 0%, transparent 65%),
+    linear-gradient(135deg, rgba(255, 254, 250, 0.84) 0%, rgba(232, 229, 220, 0.6) 100%);
+  border: 1px solid rgba(25, 30, 18, 0.34);
+  box-shadow:
+    inset 0 1.5px 1px rgba(255, 255, 255, 1),
+    0 10px 24px -6px rgba(25, 30, 18, 0.15);
+}
+
+.dark .glass-table-row-active {
+  background: #1c1c1c;
+  border: 1px solid rgba(255, 255, 255, 0.38);
+  box-shadow: none;
+}
+
+.glass-plaque {
+  background:
+    radial-gradient(110% 80% at 15% 0%, rgba(255, 255, 255, 0.72) 0%, transparent 62%),
+    linear-gradient(155deg, rgba(255, 254, 250, 0.56) 0%, rgba(243, 241, 236, 0.34) 100%);
+  backdrop-filter: blur(12px) saturate(135%) contrast(1.03);
+  -webkit-backdrop-filter: blur(12px) saturate(135%) contrast(1.03);
+  border: 1px solid rgba(25, 30, 18, 0.14);
+  box-shadow:
+    inset 0 1.5px 1px rgba(255, 255, 255, 0.94),
+    inset 0 -1.5px 3px rgba(25, 30, 18, 0.05),
+    0 8px 18px -6px rgba(25, 30, 18, 0.1);
+}
+
+.dark .glass-plaque {
+  background: #141414;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: none;
+}
+
+/* Liquid Glass tab capsule & active lens pill */
+.glass-tab-tray {
+  background: linear-gradient(180deg, rgba(243, 241, 236, 0.56), rgba(232, 229, 220, 0.34));
+  backdrop-filter: blur(14px) saturate(135%);
+  -webkit-backdrop-filter: blur(14px) saturate(135%);
+  border: 1px solid rgba(25, 30, 18, 0.14);
+  box-shadow:
+    inset 0 1.5px 3px rgba(25, 30, 18, 0.06),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.85);
+}
+
+.dark .glass-tab-tray {
+  background: #080808;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: none;
+}
+
+.glass-tab {
+  background: transparent;
+  border: 1px solid transparent;
+  transition: background-color 180ms ease, border-color 180ms ease, color 180ms ease, box-shadow 180ms ease;
+}
+
+.glass-tab:hover {
+  background: rgba(255, 254, 250, 0.65);
+  border-color: rgba(25, 30, 18, 0.14);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.9);
+}
+
+.dark .glass-tab:hover {
+  background: #181818;
+  border-color: rgba(255, 255, 255, 0.2);
+  box-shadow: none;
+}
+
+.glass-tab-active {
+  background:
+    radial-gradient(110% 85% at 20% 0%, rgba(255, 255, 255, 1) 0%, transparent 65%),
+    linear-gradient(145deg, rgba(255, 254, 250, 0.94) 0%, rgba(243, 241, 236, 0.82) 100%);
+  border: 1px solid rgba(25, 30, 18, 0.22);
+  box-shadow:
+    inset 0 2px 1px rgba(255, 255, 255, 1),
+    inset 0 -1.5px 3px rgba(25, 30, 18, 0.07),
+    0 8px 18px rgba(25, 30, 18, 0.1);
+}
+
+.dark .glass-tab-active {
+  background: #1e1e1e;
+  border: 1px solid rgba(255, 255, 255, 0.38);
+  box-shadow: none;
+}
+
+/* Range sliders */
+input[type="range"].sona-slider {
+  -webkit-appearance: none;
+  appearance: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+input[type="range"].sona-slider::-webkit-slider-runnable-track {
+  height: 4px;
+  border-radius: 999px;
+  background: rgba(148, 163, 184, 0.35);
+}
+
+input[type="range"].sona-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 12px;
+  height: 12px;
+  border-radius: 999px;
+  background: var(--sona-accent);
+  margin-top: -4px;
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.24);
+  transition: transform 140ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+input[type="range"].sona-slider:hover::-webkit-slider-thumb {
+  transform: scale(1.18);
+}
+
+input[type="range"].sona-slider:focus-visible {
+  outline: 2px solid var(--sona-accent);
+  outline-offset: 4px;
+  border-radius: 4px;
+}
+
+/* Vertical EQ slider */
+input[type="range"].sona-eq-slider {
+  -webkit-appearance: none;
+  appearance: none;
+  writing-mode: vertical-lr;
+  direction: rtl;
+  width: 24px;
+  height: 144px;
+  background: transparent;
+  cursor: pointer;
+}
+
+input[type="range"].sona-eq-slider::-webkit-slider-runnable-track {
+  width: 6px;
+  border-radius: 999px;
+  background: rgba(15, 23, 42, 0.15);
+}
+
+.dark input[type="range"].sona-eq-slider::-webkit-slider-runnable-track {
+  background: rgba(255, 255, 255, 0.16);
+}
+
+input[type="range"].sona-eq-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 14px;
+  height: 14px;
+  border-radius: 999px;
+  background: var(--sona-accent);
+  margin-left: -4px;
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.26), 0 2px 6px rgba(0, 0, 0, 0.28);
+  transition: transform 140ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+input[type="range"].sona-eq-slider:hover::-webkit-slider-thumb {
+  transform: scale(1.18);
+}
+
+input[type="range"].sona-eq-slider:focus-visible {
+  outline: 2px solid var(--sona-accent);
+  outline-offset: 4px;
+  border-radius: 6px;
+}
+
+/* Subtle scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(148, 163, 184, 0.35);
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(148, 163, 184, 0.55);
+}
+
+/* 3D Curved Track Archive Shelf (Spine-to-Cover Rotation) */
+.sona-shelf-stage {
+  perspective: 1400px;
+  perspective-origin: 50% 50%;
+  touch-action: pan-y;
+  -webkit-mask-image: linear-gradient(
+    90deg,
+    transparent 0%,
+    #000 5.5%,
+    #000 94.5%,
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    90deg,
+    transparent 0%,
+    #000 5.5%,
+    #000 94.5%,
+    transparent 100%
+  );
+}
+
+.sona-shelf-center {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 0;
+  height: 0;
+  transform-style: preserve-3d;
+}
+
+.sona-shelf-book {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 0;
+  height: 0;
+  transform-style: preserve-3d;
+  will-change: transform;
+  cursor: pointer;
+}
+
+.sona-shelf-face {
+  position: absolute;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  overflow: hidden;
+}
+
+.sona-shelf-face::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: #07080b;
+  opacity: var(--shade, 0);
+  pointer-events: none;
+  border-radius: inherit;
+  z-index: 6;
+}
+
+/* Vertical Collector Cloth/Leather Spine Face */
+.sona-shelf-sp {
+  border-radius: 3px;
+  border-left: 1px solid rgba(255, 248, 232, 0.2);
+  border-right: 1px solid rgba(10, 8, 6, 0.55);
+  box-shadow:
+    inset 0 0 14px rgba(0, 0, 0, 0.34),
+    inset 0 1px 0 rgba(255, 248, 232, 0.14);
+}
+
+/* Raised Spine Bands (Бинты переплёта) + Directional Lighting */
+.sona-shelf-sp::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 2;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(255, 250, 240, 0.2) 0%,
+      rgba(255, 250, 240, 0.04) 22%,
+      transparent 48%,
+      rgba(0, 0, 0, 0.24) 84%,
+      rgba(0, 0, 0, 0.46) 100%
+    ),
+    linear-gradient(
+      180deg,
+      transparent 0%,
+      transparent 24.5%,
+      rgba(235, 214, 168, 0.42) 25.1%,
+      rgba(0, 0, 0, 0.44) 26.6%,
+      transparent 27.2%,
+      transparent 78.2%,
+      rgba(235, 214, 168, 0.42) 78.8%,
+      rgba(0, 0, 0, 0.44) 80.3%,
+      transparent 81%
+    );
+}
+
+/* Archival Collector Front Book Cover */
+.sona-shelf-cv {
+  border-radius: 3px 6px 6px 3px;
+  background: linear-gradient(
+    155deg,
+    rgba(248, 245, 238, 0.98) 0%,
+    rgba(243, 240, 234, 0.96) 56%,
+    rgba(236, 244, 251, 0.97) 100%
+  );
+  border: 1px solid rgba(28, 24, 19, 0.28);
+  box-shadow:
+    0 34px 60px -26px rgba(15, 23, 42, 0.42),
+    inset 14px 0 20px -12px rgba(20, 16, 10, 0.22),
+    inset -1px 0 0 rgba(255, 255, 255, 0.85);
+}
+
+.dark .sona-shelf-cv {
+  background: linear-gradient(
+    155deg,
+    rgba(22, 22, 22, 0.98) 0%,
+    rgba(10, 10, 10, 0.98) 54%,
+    rgba(18, 18, 18, 0.98) 100%
+  );
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  box-shadow:
+    0 38px 66px -24px rgba(0, 0, 0, 0.92),
+    inset 14px 0 22px -12px rgba(0, 0, 0, 0.72),
+    inset -1px 0 0 rgba(255, 255, 255, 0.16);
+}
+
+/* Book Spine Crease Groove on Left Edge */
+.sona-shelf-cv::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 5.2%;
+  width: 2px;
+  background: linear-gradient(90deg, rgba(20, 16, 10, 0.24), rgba(255, 255, 255, 0.58));
+  pointer-events: none;
+  z-index: 3;
+}
+
+.dark .sona-shelf-cv::before {
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0.65), rgba(255, 255, 255, 0.2));
+}
+
+/* Double Blind-Debossed Inner Book Frame */
+.sona-shelf-cv-frame {
+  position: absolute;
+  inset: 3.4% 4% 3.4% 7.4%;
+  border: 1px solid rgba(24, 21, 17, 0.22);
+  outline: 1px solid rgba(24, 21, 17, 0.09);
+  outline-offset: -3px;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.dark .sona-shelf-cv-frame {
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  outline: 1px solid rgba(255, 255, 255, 0.09);
+}
+
+/* Matted 1:1 Archival Cover Plate */
+.sona-shelf-cv-plate {
+  border: 1px solid rgba(24, 21, 17, 0.24);
+  background: #faf7f0;
+  box-shadow: 0 8px 18px -8px rgba(20, 16, 10, 0.38);
+}
+
+.dark .sona-shelf-cv-plate {
+  border: 1px solid rgba(255, 255, 255, 0.26);
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 10px 22px -8px rgba(0, 0, 0, 0.78);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
